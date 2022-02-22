@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private gameState currentState;
     [Header("Items Recoleted")]
     [SerializeField] private int Score;
+    [SerializeField] private TextMeshProUGUI textScore1;
+
     public enum gameState
     {
         Play,
@@ -48,6 +52,8 @@ public class GameManager : MonoBehaviour
     public void IncreaseItems(int score)
     {
         this.Score += score;
+        textScore1.text = Score.ToString() + " Dragon Flames";
+
     }
 
     public void SetCurrentState (gameState newCurrentState)
