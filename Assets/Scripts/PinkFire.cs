@@ -15,7 +15,7 @@ public class PinkFire : MonoBehaviour
     {
         if (other.name == "Player Cirilla")
         {
-            sc.TrackScore(1);
+            //sc.TrackScore(1);
             Destroy(gameObject);
         }
     }
