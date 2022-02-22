@@ -5,7 +5,7 @@ using UnityEngine;
 public class RedFire : MonoBehaviour
 {
     private CiriAnimation anim;
-    private Score sc;
+    [SerializeField] public Score sc;
 
 
     private void Start()

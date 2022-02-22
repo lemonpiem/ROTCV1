@@ -18,6 +18,8 @@ public class Score : MonoBehaviour
 
     public void TrackScore(int score)
     {
+        Debug.Log("test");
         GameManager.instance.IncreaseItems (score);
+        
     }
 }
