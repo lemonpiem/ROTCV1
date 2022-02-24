@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float jumpForce;
+    //[SerializeField] private float speed;
+    //[SerializeField] private float jumpForce;
+    public CiriInfo datos;
     private bool jump;
     private Rigidbody rb;
     Vector3 movement = Vector3.zero;
@@ -49,7 +50,7 @@ public class Movement : MonoBehaviour
 
     void Move(Vector3 movement)
     {
-        rb.MovePosition(rb.position + movement.normalized * speed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement.normalized * datos.speed * Time.fixedDeltaTime);
         
         if ((Mathf.Abs(movement.normalized.x) + Mathf.Abs(movement.normalized.z)) == 0)
         {
@@ -63,7 +64,7 @@ public class Movement : MonoBehaviour
 
         if (jump == true)
         {
-          rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+          rb.AddForce(Vector3.up * datos.jumpForce, ForceMode.Impulse);
             jump = false;
             
         }
