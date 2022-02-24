@@ -13,7 +13,7 @@ public class Enemies : MonoBehaviour
     {
         PlayerFind();
     }
-    void Update()
+    protected void Update()
     {
         LookAtPlayer();
     }

@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class Dragon : Enemies
 {
-    
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private DragonInfo data;
+    [SerializeField] private int damage;
+    [SerializeField] private int health;
+
+    new
+
+        // Start is called before the first frame update
+        void Start()
     {
         PlayerFind();
+        damage = data.damage;
+        health = data.health;
+       
     }
 
-    // Update is called once per frame
-    void Update()
+    new
+
+        // Update is called once per frame
+        void Update()
     {
         LookAtPlayer();
     }

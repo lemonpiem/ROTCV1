@@ -151,7 +151,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: cea025c383c8592459a7951ed6c36e3f, type: 2}
+  damage: 0
+  health: 0
 --- !u!1 &163834025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,7 +1110,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: cea025c383c8592459a7951ed6c36e3f, type: 2}
+  damage: 0
+  health: 0
 --- !u!4 &383744340 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 480112, guid: 8e302007cba46d94b970c6a0955b9628, type: 3}
@@ -2901,7 +2905,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843409367}
-  m_LocalRotation: {x: 0.27003086, y: 0.000000039111097, z: -0.000000010968673, w: 0.9628517}
+  m_LocalRotation: {x: 0.27003086, y: 0.000000072245484, z: -0.00000002026118, w: 0.9628517}
   m_LocalPosition: {x: 0.9499998, y: 0.41999984, z: 2.1000004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4210,7 +4214,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344362922}
-  m_LocalRotation: {x: 0.015934289, y: 0.9805025, z: -0.17408867, w: 0.08974511}
+  m_LocalRotation: {x: 0.015934281, y: 0.9805025, z: -0.17408867, w: 0.089745075}
   m_LocalPosition: {x: 0.08899641, y: -0.3510008, z: 10.887012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

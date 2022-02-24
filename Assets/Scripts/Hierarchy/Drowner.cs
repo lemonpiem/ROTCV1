@@ -10,7 +10,7 @@ public class Drowner : Enemies
     [SerializeField] private bool isMoving;
     private MonsterAnimation anim;
 
-    void Start()
+    new void Start()
     {
         PlayerFind();
         rb = GetComponent<Rigidbody>();
@@ -25,7 +25,7 @@ public class Drowner : Enemies
         }
     }
 
-    void Update()
+    new void Update()
     {
         RayControl();
     }
