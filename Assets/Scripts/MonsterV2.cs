@@ -19,7 +19,6 @@ public class MonsterV2 : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<MonsterAnimation>();
         
-        
     }
 
     // Update is called once per frame
