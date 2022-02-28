@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
         anim = GetComponent<CiriAnimation>();
         anim.Idle();
 
-        
+
     }
 
     private void FixedUpdate()
