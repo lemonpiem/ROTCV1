@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using TMPro;
 
 public class Movement : MonoBehaviour
 {
+
+    public event Action onVictory;
+
     //[SerializeField] private float speed;
     //[SerializeField] private float jumpForce;
     public CiriInfo datos;
@@ -11,6 +16,7 @@ public class Movement : MonoBehaviour
     private Rigidbody rb;
     Vector3 movement = Vector3.zero;
     private CiriAnimation anim;
+    [SerializeField] private GameObject victorySign;
 
 
     // Start is called before the first frame update
@@ -19,6 +25,8 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<CiriAnimation>();
         anim.Idle();
+        Invoker();
+        onVictory += VictorySign; 
 
 
     }
@@ -86,7 +94,21 @@ public class Movement : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         anim.Victory();
+        onVictory();
+
     }
+
+    private void VictorySign()
+    {
+        victorySign.SetActive(true);
+        Debug.Log("Publisher: OnVictory - Subscriber: VictorySing");
+    }
+
+    private void Invoker()
+    {
+        onVictory?.Invoke();
+    }
+
 
  }
 
