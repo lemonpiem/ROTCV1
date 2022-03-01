@@ -11,13 +11,16 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Button newGame;
     [SerializeField] private Button quitGame;
-    
+    [SerializeField] private Button settingsGame;
+
 
     private void Start()
     {
     
         newGame.onClick.AddListener(PlayGame);
         quitGame.onClick.AddListener(QuitGame);
+        settingsGame.onClick.AddListener(Settings);
+
 
     }
 
@@ -37,7 +40,13 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Subscriber: Quit Game ");
     }
 
-  
+    public void Settings()
+    {
+        SceneManager.LoadSceneAsync(2);
+        Debug.Log("Publisher: OnClick ");
+        Debug.Log("Subscriber: Settings ");
+
+    }
 
 }
 
