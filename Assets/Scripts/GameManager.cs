@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [Header("Items Recoleted")]
     [SerializeField] private int Score;
     [SerializeField] private TextMeshProUGUI textScore1;
+    public static GameManager instance;
+    
 
     public enum gameState
     {
@@ -19,15 +21,13 @@ public class GameManager : MonoBehaviour
         GameOver,
     }
 
-    public static GameManager instance; 
-
     void Awake()
     {
-        if (instance!=null && instance!= this)
-        {
-            Destroy(gameObject);
-            return;
-        }
+        if (instance != null && instance != this)
+    {
+        Destroy(gameObject);
+        return;
+    }
         instance = this;
         DontDestroyOnLoad(gameObject);
     }
@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
 
     public void IncreaseItems(int score)
     {
+        
         this.Score += score;
         textScore1.text = Score.ToString() + " Dragon Flames";
 

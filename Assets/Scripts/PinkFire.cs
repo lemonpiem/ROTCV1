@@ -15,6 +15,7 @@ public class PinkFire : MonoBehaviour
     
     private void Start()
     {
+        
         sc = GameObject.Find("Score").GetComponent<Score>();
         
     }
