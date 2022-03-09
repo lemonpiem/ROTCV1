@@ -66,10 +66,10 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   focusDistance:
-    overrideState: 0
-    value: 10
+    overrideState: 1
+    value: 2.5
   aperture:
-    overrideState: 0
+    overrideState: 1
     value: 5.6
   focalLength:
     overrideState: 0
@@ -202,8 +202,8 @@ MonoBehaviour:
     overrideState: 0
     value: {x: 1, y: 1, z: 1, w: 0}
   gain:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 0.6003878, y: 0.728299, z: 1, w: 0}
   masterCurve:
     overrideState: 0
     value:

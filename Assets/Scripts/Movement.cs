@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour
     private Rigidbody rb;
     Vector3 movement = Vector3.zero;
     private CiriAnimation anim;
+    private float sprintSpeed;
+    private bool isGrounded;
     [SerializeField] private GameObject victorySign;
 
 
@@ -45,13 +47,17 @@ public class Movement : MonoBehaviour
        movement.x = Input.GetAxisRaw("Horizontal");
        movement.z = Input.GetAxisRaw("Vertical");
 
-       if (Input.GetKeyDown(KeyCode.Space)) 
+       if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
        {
           jump = true;
+          isGrounded = false;
           
        }
 
-
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            Sprint();
+        }
 
     }
 
@@ -72,13 +78,19 @@ public class Movement : MonoBehaviour
 
         if (jump == true)
         {
-          rb.AddForce(Vector3.up * datos.jumpForce, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * datos.jumpForce, ForceMode.Impulse);
             jump = false;
-            
+           
         }
 
         
 
+    }
+
+    private void Sprint()
+    {
+        sprintSpeed = datos.speed * 0.01f;
+        anim.Run();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -109,6 +121,13 @@ public class Movement : MonoBehaviour
         onVictory?.Invoke();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == ("Terrain") && isGrounded == false) 
 
+        {
+            isGrounded = true;
+        }
+    }
  }
 
