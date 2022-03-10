@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Drowner : Enemies
 {
@@ -9,6 +10,8 @@ public class Drowner : Enemies
     [SerializeField] private Transform rayP;
     [SerializeField] private bool isMoving;
     private MonsterAnimation anim;
+    [SerializeField] private PostProcessVolume volume;
+    private Vignette _vignette;
 
     new void Start()
     {
@@ -62,6 +65,20 @@ public class Drowner : Enemies
         {
             Debug.Log("Ciri: Agggh");
             anim.Shout();
+            volume.profile.TryGetSettings(out _vignette);
+            _vignette.intensity.value = 0.513f;
+
+        }
+
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.name == "Player Cirilla")
+        {
+            
+            volume.profile.TryGetSettings(out _vignette);
+            _vignette.intensity.value = 0;
 
         }
 
