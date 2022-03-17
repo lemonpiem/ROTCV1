@@ -1326,13 +1326,13 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 1
+    value: 0
   focusDistance:
     overrideState: 1
-    value: 6
+    value: 3.98
   aperture:
     overrideState: 1
-    value: 3
+    value: 0.1
   focalLength:
     overrideState: 0
     value: 50
@@ -1377,7 +1377,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.36
+    value: 0.14
   color:
     overrideState: 1
     value: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}

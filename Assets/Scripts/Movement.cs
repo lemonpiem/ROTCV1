@@ -16,10 +16,10 @@ public class Movement : MonoBehaviour
     private Rigidbody rb;
     Vector3 movement = Vector3.zero;
     private CiriAnimation anim;
-    private float sprintSpeed;
     private bool isGrounded;
     [SerializeField] private GameObject victorySign;
-
+    private float sprintSpeed;
+    private float rotationSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +38,7 @@ public class Movement : MonoBehaviour
         Move(movement);
         transform.LookAt(transform.position + new Vector3(movement.x, 0, movement.z));
         
+
     }
 
     // Update is called once per frame
@@ -61,11 +62,11 @@ public class Movement : MonoBehaviour
 
     }
 
-
     void Move(Vector3 movement)
     {
         rb.MovePosition(rb.position + movement.normalized * datos.speed * Time.fixedDeltaTime);
-        
+        rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, Quaternion.LookRotation(movement, Vector3.up), rotationSpeed * Time.fixedDeltaTime));
+
         if ((Mathf.Abs(movement.normalized.x) + Mathf.Abs(movement.normalized.z)) == 0)
         {
             anim.Idle();
@@ -83,8 +84,7 @@ public class Movement : MonoBehaviour
            
         }
 
-        
-
+       
     }
 
     private void Sprint()
