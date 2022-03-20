@@ -10,12 +10,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private gameState currentState;
     [Header("Items Recoleted")]
     [SerializeField] private int Score;
-    [SerializeField] private TextMeshProUGUI textScore1;
     public static GameManager instance;
     
 
     public enum gameState
     {
+        MainMenu,
         Play,
         Pause,
         GameOver,
@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
     { 
      switch (currentState)
         {
+            case gameState.MainMenu:
+                break;
             case gameState.Play:
                 Debug.Log("Excecute Play tasks");
                 break;
@@ -45,22 +47,16 @@ public class GameManager : MonoBehaviour
             case gameState.GameOver:
                 Debug.Log("Excecute GameOver tasks");
                 break;
+
         }
         
-    }       
-
-    public void IncreaseItems(int score)
-    {
-        
-        this.Score += score;
-        textScore1.text = Score.ToString() + " Dragon Flames";
-
     }
 
-    public void SetCurrentState (gameState newCurrentState)
+    public void SetCurrentState(gameState newCurrentState)
     {
         currentState = newCurrentState;
     }
+
 }
 
 

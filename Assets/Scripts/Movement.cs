@@ -77,7 +77,7 @@ public class Movement : MonoBehaviour
         }
         
 
-        if (jump == true)
+        if (jump && isGrounded)
         {
             rb.AddForce(Vector3.up * datos.jumpForce, ForceMode.Impulse);
             jump = false;

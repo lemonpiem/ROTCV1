@@ -7,8 +7,8 @@ using TMPro;
 public class Score : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textScore1;
+    [SerializeField] private int score;
 
-    
     void Start()
     {
         textScore1 = GameObject.Find("Score1").GetComponent<TextMeshProUGUI>();
@@ -23,7 +23,17 @@ public class Score : MonoBehaviour
     public void TrackScore(int score)
     {
         
-        GameManager.instance.IncreaseItems (score);
+        IncreaseItems (score);
         
     }
+
+    public void IncreaseItems(int score)
+    {
+
+        this.score += score;
+        textScore1.text = score.ToString() + " Dragon Flames";
+
+    }
+
+    
 }
