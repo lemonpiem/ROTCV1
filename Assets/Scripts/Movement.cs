@@ -36,6 +36,7 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         Move(movement);
+        
         transform.LookAt(transform.position + new Vector3(movement.x, 0, movement.z));
         
 
@@ -64,8 +65,9 @@ public class Movement : MonoBehaviour
 
     void Move(Vector3 movement)
     {
-        rb.MovePosition(rb.position + movement.normalized * datos.speed * Time.fixedDeltaTime);
-        rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, Quaternion.LookRotation(movement, Vector3.up), rotationSpeed * Time.fixedDeltaTime));
+        Vector3 direction = new Vector3(movement.x, 0f, movement.z).normalized;
+        //rb.MovePosition(rb.position + movement.normalized * datos.speed * Time.fixedDeltaTime);
+        //rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, Quaternion.LookRotation(movement, Vector3.up), rotationSpeed * Time.fixedDeltaTime));
 
         if ((Mathf.Abs(movement.normalized.x) + Mathf.Abs(movement.normalized.z)) == 0)
         {
