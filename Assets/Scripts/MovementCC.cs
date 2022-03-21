@@ -37,6 +37,7 @@ public class MovementCC : MonoBehaviour
     {
         Move();
 
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, floorMask);
         isGrounded = true;
 
@@ -71,14 +72,16 @@ public class MovementCC : MonoBehaviour
         float z = Input.GetAxisRaw("Vertical");
 
         Vector3 move = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
+
+        
+        Vector3 movementInput = Quaternion.Euler(0, _followCamera.transform.eulerAngles.y, 0) * new Vector3(x, 0, z);
+        Vector3 movementDirection = movementInput.normalized;
+
         cc.Move(move * movespeed * Time.deltaTime);
 
         speed.y += gravity * Time.deltaTime;
         cc.Move(speed * Time.deltaTime);
 
-        Vector3 movementInput = Quaternion.Euler(0, _followCamera.transform.eulerAngles.y, 0) * new Vector3(x, 0, z);
-        Vector3 movementDirection = movementInput.normalized;
-       
         Debug.Log(movementDirection);
 
         if (movementDirection != Vector3.zero)
@@ -88,9 +91,9 @@ public class MovementCC : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
         }
 
-        
 
-       if ((Mathf.Abs(move.normalized.x) + Mathf.Abs(move.normalized.z)) == 0)
+
+        if ((Mathf.Abs(move.normalized.x) + Mathf.Abs(move.normalized.z)) == 0)
 
         {
 
@@ -102,4 +105,6 @@ public class MovementCC : MonoBehaviour
             anim.Walk();
         }
     }
+
+   
 }

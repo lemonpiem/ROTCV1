@@ -3631,7 +3631,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843409367}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.3200002, y: -0.6299999, z: 2.6730022}
+  m_LocalPosition: {x: 0.9500003, y: -2.09, z: -3.666998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1857769500}
@@ -5539,7 +5539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1344362923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5582,7 +5582,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344362922}
-  m_LocalRotation: {x: 0.015934281, y: 0.9805025, z: -0.17408867, w: 0.089745075}
+  m_LocalRotation: {x: 0.015934292, y: 0.9805025, z: -0.17408867, w: 0.08974513}
   m_LocalPosition: {x: 0.08899641, y: -0.3510008, z: 10.997011}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7430,7 +7430,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1857769500}
   - component: {fileID: 1857769503}
-  - component: {fileID: 1857769501}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -7452,28 +7451,6 @@ Transform:
   m_Father: {fileID: 843409369}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1857769501
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1857769499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BindingMode: 4
-  m_FollowOffset: {x: 0.37, y: 1.46, z: -3.66}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
-  m_AngularDampingMode: 0
-  m_PitchDamping: 0
-  m_YawDamping: 0
-  m_RollDamping: 0
-  m_AngularDamping: 0
 --- !u!114 &1857769503
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -7720,49 +7697,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.85, z: 0}
---- !u!114 &1969391999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969391994}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f4a9be2c47a4384386b7ca063942dd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cc: {fileID: 1969391995}
-  movespeed: 4
-  sprintSpeed: 10
-  rotationSpeed: 0
-  gravity: -9.81
-  speed: {x: 0, y: 0, z: 0}
-  groundCheck: {fileID: 366554042}
-  groundDistance: 0.4
-  floorMask:
-    serializedVersion: 2
-    m_Bits: 0
-  isGrounded: 1
-  anim: {fileID: 0}
-  _followCamera: {fileID: 0}
---- !u!114 &1969392000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969391994}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63a7c0fc9ff2a4f44a39ed7ffb755789, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerSpeed: 5
-  _rotationSpeed: 10
-  _followCamera: {fileID: 0}
-  _jumpHeight: 1
-  _gravityValue: -9.81
 --- !u!114 &1969392001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7778,7 +7712,7 @@ MonoBehaviour:
   cc: {fileID: 0}
   movespeed: 5
   sprintSpeed: 0
-  rotationSpeed: 0
+  rotationSpeed: 3
   gravity: -9.81
   speed: {x: 0, y: 0, z: 0}
   groundCheck: {fileID: 366554042}
