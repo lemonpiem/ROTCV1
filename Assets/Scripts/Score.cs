@@ -32,6 +32,7 @@ public class Score : MonoBehaviour
 
         this.score += score;
         textScore1.text = score.ToString() + " Dragon Flames";
+        Debug.Log(score.ToString() + " Dragon Flames");
 
     }
 

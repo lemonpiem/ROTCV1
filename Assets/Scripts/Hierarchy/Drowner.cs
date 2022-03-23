@@ -11,7 +11,7 @@ public class Drowner : Enemies
     [SerializeField] private bool isMoving;
     private MonsterAnimation anim;
     [SerializeField] private PostProcessVolume volume;
-    private Vignette _vignette;
+    [SerializeField] private Vignette _vignette;
 
     new void Start()
     {
@@ -74,7 +74,7 @@ public class Drowner : Enemies
 
     void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.name == "Player Cirilla")
+        if (collision.gameObject.name == "Player Cirilla 1")
         {
             
             volume.profile.TryGetSettings(out _vignette);

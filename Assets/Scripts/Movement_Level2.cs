@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class MovementL2 : MonoBehaviour
+public class Movement_Level2 : MonoBehaviour
 {
 
     public CharacterController cc;
@@ -29,7 +29,7 @@ public class MovementL2 : MonoBehaviour
         _followCamera = GameObject.Find("CM vcam1").GetComponent<CinemachineVirtualCamera>();
         cc = GetComponent<CharacterController>();
         anim = GetComponent<CiriAnimation>();
-        anim.Idle();
+        anim.SwordIdle();
     }
 
     // Update is called once per frame
@@ -62,7 +62,7 @@ public class MovementL2 : MonoBehaviour
     private void Sprint()
     {
         sprintSpeed = movespeed + movespeed * 0.5f;
-        anim.Run();
+        anim.SwordRun();
     }
 
     private void Move()
@@ -82,7 +82,6 @@ public class MovementL2 : MonoBehaviour
         speed.y += gravity * Time.deltaTime;
         cc.Move(speed * Time.deltaTime);
 
-        Debug.Log(movementDirection);
 
         if (movementDirection != Vector3.zero)
         {
@@ -97,12 +96,12 @@ public class MovementL2 : MonoBehaviour
 
         {
 
-            anim.Idle();
+            anim.SwordIdle();
 
         }
         else
         {
-            anim.Walk();
+            anim.SwordWalk();
         }
     }
 }

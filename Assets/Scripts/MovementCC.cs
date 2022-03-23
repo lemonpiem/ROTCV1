@@ -82,7 +82,7 @@ public class MovementCC : MonoBehaviour
         speed.y += gravity * Time.deltaTime;
         cc.Move(speed * Time.deltaTime);
 
-        Debug.Log(movementDirection);
+        
 
         if (movementDirection != Vector3.zero)
         {

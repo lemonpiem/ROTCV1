@@ -44,4 +44,27 @@ public class CiriAnimation : MonoBehaviour
         anim.SetBool("Ending", true);
     }
 
+    public void Attack()
+    {
+        anim.SetBool("Fighting", true);
+    }
+
+    public void SwordIdle()
+    {
+        anim.SetBool("Sword", true);
+        anim.SetFloat("Velocity", 0f);
+    }
+
+    public void SwordWalk()
+    {
+        anim.SetBool("Sword", true);
+        anim.SetFloat("Velocity", 0.5f);
+    }
+
+    public void SwordRun()
+    {
+        anim.SetBool("Sword", true);
+        anim.SetFloat("Velocity", 1f);
+    }
+
 }
