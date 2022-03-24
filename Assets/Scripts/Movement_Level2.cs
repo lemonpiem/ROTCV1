@@ -59,11 +59,7 @@ public class Movement_Level2 : MonoBehaviour
             Sprint();
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            StartCoroutine(Attack());
-            Debug.Log("Attack");  
-        }
+        //ATTACK
         
 
     }
@@ -116,13 +112,6 @@ public class Movement_Level2 : MonoBehaviour
         
     }
 
-    private IEnumerator Attack()
-    {
-        //Animación de ataque
-        anim.Attack();
-        yield return new WaitForSeconds(1.1f);
-        anim.StopAttack();
-
-    }
+    
 }
 

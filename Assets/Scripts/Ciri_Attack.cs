@@ -4,29 +4,61 @@ using UnityEngine;
 
 public class Ciri_Attack : MonoBehaviour
 {
+    public GameObject sword;
+    [SerializeField] private CiriInfo datos;
+    [SerializeField] private CiriAnimation anim;
+    private bool canAttack;
+    public bool isAttacking;
+    [SerializeField] private bool EnemyInAttackRange;
+    [SerializeField] private float attackRange;
+    [SerializeField] private LayerMask whatIsEnemy;
+    public AudioClip swordSound;
 
-    public CiriAnimation anim;
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         anim = GetComponent<CiriAnimation>();
+        canAttack = true;
+        //EnemyInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsEnemy);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Attack");
-            Attack();
+            if (canAttack)
+            {
+                SwordAttack();
+                
+            }
+            
         }
-        
     }
 
-    void Attack()
+    private void SwordAttack()
     {
-        //Animación de ataque
+        canAttack = false;
         anim.Attack();
-        
+        isAttacking = true;
+        AudioSource ac = GetComponent<AudioSource>();
+        ac.PlayOneShot(swordSound);
+        Debug.Log("Attack");
+        StartCoroutine(CoolDown());
     }
+
+    private IEnumerator CoolDown()
+    {
+
+        yield return new WaitForSeconds(1.1f);
+        anim.StopAttack();
+        canAttack = true;
+        isAttacking = false;
+
+    }
+
+    
+
+    
+
+
+
 }

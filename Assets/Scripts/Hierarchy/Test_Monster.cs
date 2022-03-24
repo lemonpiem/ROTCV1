@@ -11,9 +11,12 @@ public class Test_Monster : Enemies
 
     [SerializeField] private Transform player;
 
+    [SerializeField] private MonsterAnimation anim;
+
     [SerializeField] private LayerMask whatIsGround, whatIsPlayer;
 
-    [SerializeField] private float health;
+    [SerializeField] private int maxHealth;
+    public int currentHealth;
 
     [SerializeField] private Vector3 walkPoint;
     [SerializeField] private bool walkPointSet;
@@ -33,10 +36,13 @@ public class Test_Monster : Enemies
     {
         player = GameObject.Find("Player Cirilla").transform;
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<MonsterAnimation>();
+
+        currentHealth = maxHealth; 
     }
 
-    // Update is called once per frame
-    void Update()
+
+    new void Update()
     {
 
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
@@ -56,6 +62,7 @@ public class Test_Monster : Enemies
             agent.SetDestination(walkPoint);
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
+        anim.Run();
 
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
@@ -63,7 +70,7 @@ public class Test_Monster : Enemies
 
     private void SearchWalkPoint()
     {
-        //Calculate random point in range
+        
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
 
@@ -76,26 +83,28 @@ public class Test_Monster : Enemies
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+        anim.Run();
     }
 
     private void AttackPlayer()
     {
-        //Make sure enemy doesn't move
+        
         agent.SetDestination(transform.position);
 
         transform.LookAt(player);
 
         if (!alreadyAttacked)
         {
-            ///Attack code here
-            //Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            //rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            //rb.AddForce(transform.up * 8f, ForceMode.Impulse);
-            ///End of attack code
+         
+            anim.DrownerAttack();
+            
+
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
+
+        
 
     }
 
@@ -106,12 +115,14 @@ public class Test_Monster : Enemies
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        currentHealth -= damage;
+        anim.DrownerRecievingDamage();
 
-        if (health <= 0) Invoke(nameof(DestroyEnemy), 0.5f);
+        if (currentHealth <= 0) Invoke(nameof(DestroyEnemy), 0.5f);
     }
     private void DestroyEnemy()
     {
+        anim.DrownerDeath();
         Destroy(gameObject);
     }
 

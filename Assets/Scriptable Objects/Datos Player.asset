@@ -16,4 +16,5 @@ MonoBehaviour:
   speed: 6
   jumpForce: 4
   material: {fileID: 2100000, guid: 102e21d5ccfec7d47843e8e0cc8734ad, type: 2}
-  life: 10
+  life: 100
+  damage: 0

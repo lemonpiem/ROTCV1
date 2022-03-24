@@ -6,15 +6,11 @@ public class MonsterAnimation : MonoBehaviour
 {
     private Animator anim;
 
-    // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    
-   
     public void Idle()
      {
             anim.SetFloat("Velocity", 0);
@@ -36,4 +32,23 @@ public class MonsterAnimation : MonoBehaviour
         anim.SetBool("IsTrigger", true);
     }
     
+    public void DrownerAttack()
+    {
+        anim.SetBool("Fighting", true);
+    }
+
+    public void DrownerRecievingDamage()
+    {
+        anim.SetBool("RecivingDamage", true);
+    }
+
+    public void StopDrownerAttack()
+    {
+        anim.SetBool("Fighting", false);
+    }
+
+    public void DrownerDeath()
+    {
+        anim.SetFloat("Health", 0);
+    }
 }

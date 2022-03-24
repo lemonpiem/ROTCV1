@@ -10,5 +10,5 @@ public class CiriInfo : ScriptableObject
     public float jumpForce;
     public Material material;
     public float life;
-    public float damage; 
+    public int damage; 
 }
