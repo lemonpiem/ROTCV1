@@ -26,5 +26,6 @@ public class Ciri_Attack : MonoBehaviour
     {
         //Animación de ataque
         anim.Attack();
+        
     }
 }
