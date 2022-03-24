@@ -6,20 +6,22 @@ using Cinemachine;
 public class Movement_Level2 : MonoBehaviour
 {
 
-    public CharacterController cc;
-    public float movespeed = 5;
-    public float sprintSpeed;
-    public float rotationSpeed;
+    [SerializeField] private CharacterController cc;
+    [SerializeField] private float movespeed = 5;
+    [SerializeField] private float sprintSpeed;
+    [SerializeField] private float rotationSpeed;
 
-    public float gravity = -9.81f;
-    public Vector3 speed;
+    [SerializeField] private CiriInfo datos;
 
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask floorMask;
-    public bool isGrounded;
+    [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private Vector3 speed;
 
-    public CiriAnimation anim;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundDistance = 0.4f;
+    [SerializeField] private LayerMask floorMask;
+    [SerializeField] private bool isGrounded;
+
+    [SerializeField] private CiriAnimation anim;
 
     [SerializeField] private CinemachineVirtualCamera _followCamera;
 
@@ -56,6 +58,13 @@ public class Movement_Level2 : MonoBehaviour
         {
             Sprint();
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            StartCoroutine(Attack());
+            Debug.Log("Attack");  
+        }
+        
 
     }
 
@@ -103,6 +112,17 @@ public class Movement_Level2 : MonoBehaviour
         {
             anim.SwordWalk();
         }
+
+        
+    }
+
+    private IEnumerator Attack()
+    {
+        //Animación de ataque
+        anim.Attack();
+        yield return new WaitForSeconds(1.1f);
+        anim.StopAttack();
+
     }
 }
 

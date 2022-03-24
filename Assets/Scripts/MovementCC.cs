@@ -6,20 +6,21 @@ using Cinemachine;
 public class MovementCC : MonoBehaviour
 {
 
-    public CharacterController cc;
-    public float movespeed = 5;
-    public float sprintSpeed;
-    public float rotationSpeed;
+    [SerializeField] private CharacterController cc;
+    [SerializeField] private float movespeed = 5;
+    [SerializeField] private float sprintSpeed;
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private CiriInfo datos;
 
-    public float gravity = -9.81f;
-    public Vector3 speed;
+    [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private Vector3 speed;
 
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask floorMask;
-    public bool isGrounded;
-   
-    public CiriAnimation anim;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundDistance = 0.4f;
+    [SerializeField] private LayerMask floorMask;
+    [SerializeField] private bool isGrounded;
+
+    [SerializeField] private CiriAnimation anim;
 
     [SerializeField] private CinemachineVirtualCamera _followCamera;
 

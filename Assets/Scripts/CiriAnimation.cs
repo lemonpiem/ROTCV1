@@ -67,4 +67,8 @@ public class CiriAnimation : MonoBehaviour
         anim.SetFloat("Velocity", 1f);
     }
 
+    public void StopAttack()
+    {
+        anim.SetBool("Fighting", false);
+    }
 }

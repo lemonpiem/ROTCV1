@@ -20,6 +20,7 @@ public class Ciri_Attack : MonoBehaviour
             Debug.Log("Attack");
             Attack();
         }
+        
     }
 
     void Attack()

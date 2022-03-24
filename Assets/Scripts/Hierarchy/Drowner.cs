@@ -74,7 +74,7 @@ public class Drowner : Enemies
 
     void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.name == "Player Cirilla 1")
+        if (collision.gameObject.name == "Player Cirilla")
         {
             
             volume.profile.TryGetSettings(out _vignette);
