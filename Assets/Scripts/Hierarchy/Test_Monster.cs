@@ -38,7 +38,7 @@ public class Test_Monster : Enemies
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<MonsterAnimation>();
 
-        currentHealth = maxHealth; 
+        currentHealth = maxHealth;
     }
 
 
@@ -70,7 +70,7 @@ public class Test_Monster : Enemies
 
     private void SearchWalkPoint()
     {
-        
+
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
 
@@ -88,23 +88,23 @@ public class Test_Monster : Enemies
 
     private void AttackPlayer()
     {
-        
+
         agent.SetDestination(transform.position);
 
         transform.LookAt(player);
 
         if (!alreadyAttacked)
         {
-         
+
             anim.DrownerAttack();
-            
+
 
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
 
-        
+
 
     }
 
@@ -116,14 +116,25 @@ public class Test_Monster : Enemies
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        anim.DrownerRecievingDamage();
 
-        if (currentHealth <= 0) Invoke(nameof(DestroyEnemy), 0.5f);
+        if (currentHealth <= 0)
+        {
+            
+            Die();
+
+        }
     }
-    private void DestroyEnemy()
+    private void Die()
     {
-        anim.DrownerDeath();
-        Destroy(gameObject);
+        anim.Death();
+        
+
+        this.enabled = false;
+        GetComponent<CapsuleCollider>().enabled = false;
+
+        StartCoroutine(DestroyGO());
+        
+        
     }
 
     private void OnDrawGizmosSelected()
@@ -134,5 +145,12 @@ public class Test_Monster : Enemies
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
 
+    private IEnumerator DestroyGO()
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
+    }
+    
+    
 }
 

@@ -4,14 +4,36 @@ using UnityEngine;
 
 public class CollitionDetection : MonoBehaviour
 {
-    public GameObject hitBlood;
+    public Ciri_Attack ca;
+    public CiriInfo datos;
+    public Test_Monster currentHealth;
+
+    private void Start()
+    {
+        ca = GameObject.Find("Player Cirilla").GetComponent<Ciri_Attack>();
+        currentHealth = GameObject.Find("Monster Blue").GetComponent<Test_Monster>();
+        
+        
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemies")
+        if (other.tag == "Enemies" && ca.isAttacking)
         {
-            other.GetComponent<Animator>().SetBool("RecivingDamage", true);
-            Instantiate(hitBlood, new Vector3(other.transform.position.x, transform.position.y, other.transform.position.z), other.transform.rotation);
+            
+           other.GetComponent<Animator>().SetBool("RecivingDamage", true);
+           other.GetComponent<Test_Monster>().TakeDamage(datos.damage);
+          
+                if (other.GetComponent<Test_Monster>().currentHealth == 0)
+                {
+                    
+                    GetComponent<Animator>().SetBool("IsDead", true);
+                    Destroy(this.gameObject);
+
+                    
+                }
+
+
         }
     }
 }

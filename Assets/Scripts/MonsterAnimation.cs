@@ -47,8 +47,8 @@ public class MonsterAnimation : MonoBehaviour
         anim.SetBool("Fighting", false);
     }
 
-    public void DrownerDeath()
+    public void Death()
     {
-        anim.SetFloat("Health", 0);
+        anim.SetBool("IsDead", true);
     }
 }

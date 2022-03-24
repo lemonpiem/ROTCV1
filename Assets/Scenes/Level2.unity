@@ -509,7 +509,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
-  maxHealth: 100
+  maxHealth: 0
   currentHealth: 0
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointSet: 0
@@ -2534,7 +2534,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b895683f88c790d44b64f9f69812aa0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitBlood: {fileID: 0}
+  ca: {fileID: 0}
+  datos: {fileID: 11400000, guid: 7c1e76dec441e2643bebab544217522c, type: 2}
+  currentHealth: {fileID: 0}
 --- !u!4 &1710625535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 127701292160491080, guid: aecd8059bd2be4e40be7600b52a188a0, type: 3}
@@ -3041,7 +3043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68035fa8cb46f1041b8a5c6df524a117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sword: {fileID: 0}
+  sword: {fileID: 1644076623}
   datos: {fileID: 11400000, guid: 7c1e76dec441e2643bebab544217522c, type: 2}
   anim: {fileID: 0}
   isAttacking: 0

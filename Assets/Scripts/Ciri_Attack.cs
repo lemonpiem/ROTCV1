@@ -18,7 +18,7 @@ public class Ciri_Attack : MonoBehaviour
     {
         anim = GetComponent<CiriAnimation>();
         canAttack = true;
-        //EnemyInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsEnemy);
+        
     }
 
     private void Update()
@@ -48,12 +48,20 @@ public class Ciri_Attack : MonoBehaviour
     private IEnumerator CoolDown()
     {
 
+        StartCoroutine(ResetIsAttacking());
         yield return new WaitForSeconds(1.1f);
         anim.StopAttack();
         canAttack = true;
-        isAttacking = false;
+        
 
     }
+
+    private IEnumerator ResetIsAttacking()
+    {
+        yield return new WaitForSeconds(1.0f);
+        isAttacking = false;
+    }
+
 
     
 
