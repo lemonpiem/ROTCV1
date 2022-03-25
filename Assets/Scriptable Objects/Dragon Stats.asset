@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dragonType: Dark Dragon
   skin: {fileID: 2100000, guid: 2cc3d51c3b46bec4a95b1cf2d2488afd, type: 2}
-  maxHealth: 100
-  currentHealth: 0
-  attackDamage: 0
+  maxHealth: 300
+  currentHealth: 270
+  attackDamage: 40
