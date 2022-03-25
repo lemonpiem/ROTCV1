@@ -6,12 +6,12 @@ public class CollitionDetection : MonoBehaviour
 {
     public Ciri_Attack ca;
     public CiriInfo datos;
-    public Test_Monster currentHealth;
+    public Drowner_AI currentHealth;
 
     private void Start()
     {
         ca = GameObject.Find("Player Cirilla").GetComponent<Ciri_Attack>();
-        currentHealth = GameObject.Find("Monster Blue").GetComponent<Test_Monster>();
+        currentHealth = GameObject.Find("Drowner").GetComponent<Drowner_AI>();
         
         
     }
@@ -22,9 +22,9 @@ public class CollitionDetection : MonoBehaviour
         {
             
            other.GetComponent<Animator>().SetBool("RecivingDamage", true);
-           other.GetComponent<Test_Monster>().TakeDamage(datos.damage);
+           other.GetComponent<Drowner_AI>().TakeDamage(datos.damage);
           
-                if (other.GetComponent<Test_Monster>().currentHealth == 0)
+                if (other.GetComponent<Drowner_AI>().info.currentHealth == 0)
                 {
                     
                     GetComponent<Animator>().SetBool("IsDead", true);

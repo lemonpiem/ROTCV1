@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class Test_Monster : Enemies
+public class Drowner_AI : Enemies
 {
 
     [SerializeField] private NavMeshAgent agent;
@@ -14,9 +14,8 @@ public class Test_Monster : Enemies
     [SerializeField] private MonsterAnimation anim;
 
     [SerializeField] private LayerMask whatIsGround, whatIsPlayer;
-
-    [SerializeField] private int maxHealth;
-    public int currentHealth;
+    
+    public DrownerInfo info;
 
     [SerializeField] private Vector3 walkPoint;
     [SerializeField] private bool walkPointSet;
@@ -38,7 +37,9 @@ public class Test_Monster : Enemies
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<MonsterAnimation>();
 
-        currentHealth = maxHealth;
+        info.currentHealth = info.maxHealth;
+
+        
     }
 
 
@@ -115,9 +116,9 @@ public class Test_Monster : Enemies
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        info.currentHealth -= damage;
 
-        if (currentHealth <= 0)
+        if (info.currentHealth <= 0)
         {
             
             Die();

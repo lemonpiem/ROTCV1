@@ -1463,7 +1463,7 @@ GameObject:
   - component: {fileID: 3191977863565018994}
   - component: {fileID: 3191977863565019005}
   m_Layer: 8
-  m_Name: Monster Blue
+  m_Name: Drowner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1556,6 +1556,7 @@ MonoBehaviour:
   rayP: {fileID: 3191977863837052373}
   isMoving: 0
   volume: {fileID: 0}
+  _vignette: {fileID: 0}
 --- !u!114 &3191977863565019005
 MonoBehaviour:
   m_ObjectHideFlags: 0
