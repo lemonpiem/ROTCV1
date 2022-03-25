@@ -15,7 +15,7 @@ public class Dragon : Enemies
         // Start is called before the first frame update
         void Start()
     {
-        PlayerFind();
+        
         maxHealth = data.maxHealth;
         damage = data.attackDamage;
         currentHealth = data.currentHealth;
@@ -27,6 +27,6 @@ public class Dragon : Enemies
         // Update is called once per frame
         void Update()
     {
-        LookAtPlayer();
+       
     }
 }

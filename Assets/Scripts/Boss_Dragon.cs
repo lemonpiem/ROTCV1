@@ -8,6 +8,8 @@ public class Boss_Dragon : Dragon
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private LayerMask whatIsGround, whatIsPlayer;
 
+    private Transform player;
+
     [SerializeField] private float timeBetweenAttacks;
     [SerializeField] private bool alreadyAttacked;
 
@@ -18,9 +20,10 @@ public class Boss_Dragon : Dragon
 
     private void Awake()
     {
+        player = GameObject.Find("Player Cirilla").transform;
         data.currentHealth = data.maxHealth;
     }
-    // Start is called before the first frame update
+    
     new void Update()
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
@@ -31,10 +34,9 @@ public class Boss_Dragon : Dragon
 
     private void AttackPlayer()
     {
-
         agent.SetDestination(transform.position);
 
-        transform.LookAt(playerTransform);
+        transform.LookAt(player);
 
         if (!alreadyAttacked)
         {
