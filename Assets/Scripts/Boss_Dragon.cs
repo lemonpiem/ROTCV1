@@ -18,10 +18,15 @@ public class Boss_Dragon : Dragon
 
     [SerializeField] private DragonAnimation anim;
 
+    [SerializeField] private AudioClip dragonRoar;
+    public AudioSource ac;
+
     private void Awake()
     {
         player = GameObject.Find("Player Cirilla").transform;
         data.currentHealth = data.maxHealth;
+        anim = GetComponent<DragonAnimation>();
+        ac = GetComponent<AudioSource>();
     }
     
     new void Update()
@@ -37,12 +42,15 @@ public class Boss_Dragon : Dragon
         agent.SetDestination(transform.position);
 
         transform.LookAt(player);
+        anim.Scream();
+
 
         if (!alreadyAttacked)
         {
 
-            //anim.DrownerAttack();
-            //ac.PlayOneShot(monsterRoar)
+            anim.FlameAttack();
+            ac.PlayOneShot(dragonRoar);
+            //Fuego?
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
@@ -68,13 +76,10 @@ public class Boss_Dragon : Dragon
     }
     private void Die()
     {
-        //anim.Death();
-
+       anim.DragonDeath();
 
         this.enabled = false;
         GetComponent<SphereCollider>().enabled = false;
-
-
     }
 
 

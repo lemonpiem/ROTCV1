@@ -1564,6 +1564,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 109776, guid: 8e302007cba46d94b970c6a0955b9628, type: 3}
   m_PrefabInstance: {fileID: 1636412612}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1976822663 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9584802, guid: 8e302007cba46d94b970c6a0955b9628, type: 3}
+  m_PrefabInstance: {fileID: 1636412612}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1976822665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1588,13 +1593,15 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 0.5
   alreadyAttacked: 0
-  sightRange: 11.48
-  attackRange: 6.21
+  sightRange: 7.8
+  attackRange: 4.8
   playerInSightRange: 0
   playerInAttackRange: 0
   anim: {fileID: 0}
+  dragonRoar: {fileID: 8300000, guid: 524e3214bd92ccc458f19cb37cd99992, type: 3}
+  ac: {fileID: 0}
 --- !u!82 &1976822666
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1742,6 +1749,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1976822670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976822662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fedc30bf50ac3bd4089220f94bd29b18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1976822663}
 --- !u!1001 &2023125338
 PrefabInstance:
   m_ObjectHideFlags: 0

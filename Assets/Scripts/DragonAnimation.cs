@@ -4,15 +4,42 @@ using UnityEngine;
 
 public class DragonAnimation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] private Animator anim;
+
+    public void Scream()
     {
+        anim.SetBool("SeesPlayer",true);
+
+    }
+
+    public void Idle()
+    {
+        anim.SetBool("SeesPlayer", false);
+    }
+    public void FlameAttack()
+    {
+        anim.SetBool("SeesPlayer", true);
+        anim.SetBool("PlayerAttacking", true);
+    }
+
+    public void StopAttack()
+    {
+        anim.SetBool("SeesPlayer", true);
+        anim.SetBool("PlayerAttacking", false);
+    }
+
+    public void GetHit()
+    {
+        anim.SetBool("PlayerHit", true);
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DragonDeath()
     {
-        
+        anim.SetBool("IsDead", true);
+
     }
+
+
 }
