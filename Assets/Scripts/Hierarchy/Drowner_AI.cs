@@ -29,13 +29,17 @@ public class Drowner_AI : Enemies
     [SerializeField] private float sightRange, attackRange;
     [SerializeField] private bool playerInSightRange, playerInAttackRange;
 
+    public AudioClip monsterRoar;
+    public AudioSource ac;
 
-    
+
+
     void Awake()
     {
         player = GameObject.Find("Player Cirilla").transform;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<MonsterAnimation>();
+        ac = GetComponent<AudioSource>();
 
         info.currentHealth = info.maxHealth;
 
@@ -99,7 +103,7 @@ public class Drowner_AI : Enemies
         {
 
             anim.DrownerAttack();
-         
+            //ac.PlayOneShot(monsterRoar);
 
 
             alreadyAttacked = true;
@@ -153,25 +157,7 @@ public class Drowner_AI : Enemies
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-
-            var healthComponent = other.gameObject.GetComponent<CiriHealth>();
-            
-            if (healthComponent != null)
-            {
-                healthComponent.TakeDamage(info.attackDamage);
-                Debug.Log(info.currentHealth);
-
-            }
-
-        }
-
-
-
-    }
+    
 }
 
 

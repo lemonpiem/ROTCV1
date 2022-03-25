@@ -23,6 +23,7 @@ public class MovementCC : MonoBehaviour
     [SerializeField] private CiriAnimation anim;
 
     [SerializeField] private CinemachineVirtualCamera _followCamera;
+    
 
     void Start()
     {
@@ -31,6 +32,8 @@ public class MovementCC : MonoBehaviour
         anim = GetComponent<CiriAnimation>();
         anim.Idle();
         
+
+
     }
 
     // Update is called once per frame
@@ -64,6 +67,7 @@ public class MovementCC : MonoBehaviour
     {
         sprintSpeed = movespeed + movespeed*0.5f;
         anim.Run();
+        
     }
 
     private void Move()

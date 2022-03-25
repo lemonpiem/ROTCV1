@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [Header("Game Information")]
     [SerializeField] private gameState currentState;
     [Header("Items Recoleted")]
-    [SerializeField] private int Score;
+  
     public static GameManager instance;
 
     

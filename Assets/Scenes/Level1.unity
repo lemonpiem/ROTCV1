@@ -3608,7 +3608,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  Score: 0
 --- !u!4 &956504787
 Transform:
   m_ObjectHideFlags: 0
