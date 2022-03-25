@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810fade365bbc8048b5fe16637b2adaf, type: 3}
+  m_Name: 1
+  m_EditorClassIdentifier: 
+  sentences:
+  - text: Hello Ciri
+    speaker: {fileID: 11400000, guid: 3f114f7e6d4928d42ab953873e6b0cc9, type: 2}
+  - text: Hello Vesemir
+    speaker: {fileID: 11400000, guid: fe5021db9af940f45a238e53c32a30e3, type: 2}
+  nextScene: {fileID: 0}

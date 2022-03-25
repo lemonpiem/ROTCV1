@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [Header("Items Recoleted")]
     [SerializeField] private int Score;
     public static GameManager instance;
+
     
 
     public enum gameState

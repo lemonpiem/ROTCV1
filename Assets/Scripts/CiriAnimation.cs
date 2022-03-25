@@ -71,4 +71,10 @@ public class CiriAnimation : MonoBehaviour
     {
         anim.SetBool("Fighting", false);
     }
+
+    public void CiriDeath()
+    {
+        anim.SetBool("IsDead", true);
+    }
+
 }

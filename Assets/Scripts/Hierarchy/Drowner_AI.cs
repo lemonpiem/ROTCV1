@@ -24,13 +24,13 @@ public class Drowner_AI : Enemies
 
     [SerializeField] private float timeBetweenAttacks;
     [SerializeField] private bool alreadyAttacked;
-    [SerializeField] private GameObject projectile;
+    
 
     [SerializeField] private float sightRange, attackRange;
     [SerializeField] private bool playerInSightRange, playerInAttackRange;
 
 
-    // Start is called before the first frame update
+    
     void Awake()
     {
         player = GameObject.Find("Player Cirilla").transform;
@@ -61,9 +61,10 @@ public class Drowner_AI : Enemies
 
         if (walkPointSet)
             agent.SetDestination(walkPoint);
+            anim.Run();
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
-        anim.Run();
+        
 
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
@@ -98,7 +99,7 @@ public class Drowner_AI : Enemies
         {
 
             anim.DrownerAttack();
-
+         
 
 
             alreadyAttacked = true;
@@ -151,7 +152,26 @@ public class Drowner_AI : Enemies
         yield return new WaitForSeconds(5f);
         Destroy(gameObject);
     }
-    
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+
+            var healthComponent = other.gameObject.GetComponent<CiriHealth>();
+            
+            if (healthComponent != null)
+            {
+                healthComponent.TakeDamage(info.attackDamage);
+                Debug.Log(info.currentHealth);
+
+            }
+
+        }
+
+
+
+    }
 }
+
 
