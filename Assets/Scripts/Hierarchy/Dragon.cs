@@ -16,9 +16,11 @@ public class Dragon : Enemies
         void Start()
     {
         
-        maxHealth = data.maxHealth;
+         maxHealth = data.maxHealth;
         damage = data.attackDamage;
         currentHealth = data.currentHealth;
+
+
 
     }
 

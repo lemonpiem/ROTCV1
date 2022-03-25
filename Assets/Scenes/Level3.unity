@@ -590,7 +590,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Cirilla
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1644076628, guid: ad73f7765749e2a4fa438d46090213e5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ad73f7765749e2a4fa438d46090213e5, type: 3}
 --- !u!4 &715804200 stripped
 Transform:
@@ -748,6 +749,26 @@ MonoBehaviour:
   _distanceFromTarget: 3
   _smoothTime: 0.2
   _rotationXMinMax: {x: -40, y: 40}
+--- !u!1 &1002362084 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2024330610513445617, guid: ad73f7765749e2a4fa438d46090213e5, type: 3}
+  m_PrefabInstance: {fileID: 377332530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1002362090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002362084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9382121bb39a474aa172afb73591573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ca: {fileID: 0}
+  datos: {fileID: 11400000, guid: 7c1e76dec441e2643bebab544217522c, type: 2}
+  currentHealth: {fileID: 0}
 --- !u!1001 &1031510376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1569,6 +1590,20 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 9584802, guid: 8e302007cba46d94b970c6a0955b9628, type: 3}
   m_PrefabInstance: {fileID: 1636412612}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1976822664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976822662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3c6ab45ba252c40ace98fff1f128c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragonInfo: {fileID: 11400000, guid: cea025c383c8592459a7951ed6c36e3f, type: 2}
+  playerInfo: {fileID: 11400000, guid: 7c1e76dec441e2643bebab544217522c, type: 2}
 --- !u!114 &1976822665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1623,7 +1658,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1.7385864
-  MaxDistance: 500
+  MaxDistance: 30
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Drowner_Attack : MonoBehaviour
+public class Dragon_Attack : MonoBehaviour
 {
-    public DrownerInfo drownerInfo;
+
+    public DragonInfo dragonInfo;
     public CiriInfo playerInfo;
 
-    
-
+    // Start is called before the first frame update
     void OnCollisionEnter(Collision collision)
     {
 
@@ -19,14 +19,10 @@ public class Drowner_Attack : MonoBehaviour
 
             if (healthComponent != null)
             {
-                healthComponent.TakeDamage(drownerInfo.attackDamage);
-                Debug.Log("Player Health " + (playerInfo.currentHealth -= drownerInfo.attackDamage));
+                healthComponent.TakeDamage(dragonInfo.attackDamage);
+                Debug.Log("Player Health " + (playerInfo.currentHealth -= dragonInfo.attackDamage));
 
             }
         }
-
-
-
-    
     }
 }
