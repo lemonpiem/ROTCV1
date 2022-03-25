@@ -16,6 +16,6 @@ MonoBehaviour:
   speed: 6
   jumpForce: 4
   material: {fileID: 2100000, guid: 102e21d5ccfec7d47843e8e0cc8734ad, type: 2}
-  maxHealth: 100
-  currentHealth: -20
+  maxHealth: 200
+  currentHealth: 200
   damage: 30
