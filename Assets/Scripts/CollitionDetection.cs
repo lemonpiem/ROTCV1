@@ -6,12 +6,12 @@ public class CollitionDetection : MonoBehaviour
 {
     public Ciri_Attack ca;
     public CiriInfo datos;
-    public Drowner_AI currentHealth;
+    public int currentHealth;
 
     private void Start()
     {
         ca = GameObject.Find("Player Cirilla").GetComponent<Ciri_Attack>();
-        currentHealth = GameObject.Find("Drowner").GetComponent<Drowner_AI>();
+        currentHealth = GameObject.Find("Drowner").GetComponent<Drowner_AI>().info.currentHealth;
         
         
     }
