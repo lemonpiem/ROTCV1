@@ -5,9 +5,10 @@ using UnityEngine;
 public class Dragon : Enemies
 {
 
-    [SerializeField] private DragonInfo data;
-    [SerializeField] private int damage;
-    [SerializeField] private int health;
+    [SerializeField] public DragonInfo data;
+    [SerializeField] public int damage;
+    [SerializeField] public int maxHealth;
+    [SerializeField] public int currentHealth;
 
     new
 
@@ -15,9 +16,10 @@ public class Dragon : Enemies
         void Start()
     {
         PlayerFind();
-        damage = data.damage;
-        health = data.health;
-       
+        maxHealth = data.maxHealth;
+        damage = data.attackDamage;
+        currentHealth = data.currentHealth;
+
     }
 
     new

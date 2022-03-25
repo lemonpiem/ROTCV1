@@ -6,7 +6,9 @@ using UnityEngine;
 public class DragonInfo : ScriptableObject
 {
     public string dragonType;
-    public int damage;
-    public int health;
     public Material skin;
+    
+    public int maxHealth;
+    public int currentHealth;
+    public int attackDamage;
 }
