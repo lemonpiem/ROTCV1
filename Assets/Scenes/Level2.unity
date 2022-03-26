@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentRadius: 0.18
+    agentHeight: 2.09
+    agentSlope: 51.1
+    agentClimb: 0.28
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.060000002
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -569,7 +569,7 @@ MonoBehaviour:
   timeBetweenAttacks: 0.5
   alreadyAttacked: 0
   sightRange: 15
-  attackRange: 5
+  attackRange: 1
   playerInSightRange: 1
   playerInAttackRange: 0
   monsterRoar: {fileID: 8300000, guid: 1d1737ebd7b19214a98879852dfb6a17, type: 3}
@@ -616,7 +616,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.33
   MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
@@ -692,6 +692,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &316014147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316014138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb20cc9b7a833a349b14d933fc11d78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drownerInfo: {fileID: 11400000, guid: 8761a8fd1b74b344782a818fa33ba80e, type: 2}
+  playerInfo: {fileID: 11400000, guid: 7c1e76dec441e2643bebab544217522c, type: 2}
 --- !u!1 &363664977 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3191977864416875131, guid: 653d2dd2812e35242a69ae55ba0e2962, type: 3}
@@ -762,7 +776,7 @@ MonoBehaviour:
   timeBetweenAttacks: 0.5
   alreadyAttacked: 0
   sightRange: 15
-  attackRange: 5
+  attackRange: 1
   playerInSightRange: 1
   playerInAttackRange: 0
   monsterRoar: {fileID: 8300000, guid: 1d1737ebd7b19214a98879852dfb6a17, type: 3}
@@ -787,7 +801,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.33
   MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
@@ -901,6 +915,10 @@ PrefabInstance:
     - target: {fileID: 3191977863565018995, guid: 653d2dd2812e35242a69ae55ba0e2962, type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191977863565019006, guid: 653d2dd2812e35242a69ae55ba0e2962, type: 3}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 3191977864416875131, guid: 653d2dd2812e35242a69ae55ba0e2962, type: 3}
       propertyPath: m_Name
@@ -1223,6 +1241,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3191977863565019006, guid: 653d2dd2812e35242a69ae55ba0e2962, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 3191977864416875131, guid: 653d2dd2812e35242a69ae55ba0e2962, type: 3}
       propertyPath: m_Name
       value: Drowner (3)
@@ -1317,6 +1339,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3191977863565019006, guid: 653d2dd2812e35242a69ae55ba0e2962, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 3191977864416875131, guid: 653d2dd2812e35242a69ae55ba0e2962, type: 3}
       propertyPath: m_Name
       value: Drowner (1)
@@ -1406,7 +1432,7 @@ MonoBehaviour:
   timeBetweenAttacks: 0.5
   alreadyAttacked: 0
   sightRange: 15
-  attackRange: 5
+  attackRange: 1
   playerInSightRange: 1
   playerInAttackRange: 0
   monsterRoar: {fileID: 8300000, guid: 1d1737ebd7b19214a98879852dfb6a17, type: 3}
@@ -1453,7 +1479,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.33
   MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
@@ -1529,6 +1555,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &791246429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791246420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb20cc9b7a833a349b14d933fc11d78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drownerInfo: {fileID: 11400000, guid: 8761a8fd1b74b344782a818fa33ba80e, type: 2}
+  playerInfo: {fileID: 11400000, guid: 7c1e76dec441e2643bebab544217522c, type: 2}
 --- !u!1 &831014875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,7 +1950,7 @@ MonoBehaviour:
   timeBetweenAttacks: 0.5
   alreadyAttacked: 0
   sightRange: 15
-  attackRange: 5
+  attackRange: 1
   playerInSightRange: 1
   playerInAttackRange: 0
   monsterRoar: {fileID: 8300000, guid: 1d1737ebd7b19214a98879852dfb6a17, type: 3}
@@ -1957,7 +1997,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.33
   MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
@@ -2033,6 +2073,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &876302414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876302405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb20cc9b7a833a349b14d933fc11d78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drownerInfo: {fileID: 11400000, guid: 8761a8fd1b74b344782a818fa33ba80e, type: 2}
+  playerInfo: {fileID: 11400000, guid: 7c1e76dec441e2643bebab544217522c, type: 2}
 --- !u!1 &887717336
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,6 +3174,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3191977863565019006, guid: 653d2dd2812e35242a69ae55ba0e2962, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 3191977864416875131, guid: 653d2dd2812e35242a69ae55ba0e2962, type: 3}
       propertyPath: m_Name
       value: Drowner
@@ -3848,6 +3906,22 @@ PrefabInstance:
     - target: {fileID: 2117473993542540848, guid: ad73f7765749e2a4fa438d46090213e5, type: 3}
       propertyPath: m_Name
       value: Player Cirilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998443581885019537, guid: ad73f7765749e2a4fa438d46090213e5, type: 3}
+      propertyPath: m_Size.z
+      value: 0.3405668
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998443581885019537, guid: ad73f7765749e2a4fa438d46090213e5, type: 3}
+      propertyPath: m_Center.x
+      value: -0.0077842018
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998443581885019537, guid: ad73f7765749e2a4fa438d46090213e5, type: 3}
+      propertyPath: m_Center.y
+      value: 0.40771192
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998443581885019537, guid: ad73f7765749e2a4fa438d46090213e5, type: 3}
+      propertyPath: m_Center.z
+      value: -0.16993801
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad73f7765749e2a4fa438d46090213e5, type: 3}

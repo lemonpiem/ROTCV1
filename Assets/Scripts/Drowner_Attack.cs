@@ -13,7 +13,7 @@ public class Drowner_Attack : MonoBehaviour
     {
 
         if (collision.gameObject.name == "Player Cirilla")
-            Debug.Log("La colisión funciona");
+            
         {
             var healthComponent = collision.gameObject.GetComponent<CiriHealth>();
 
