@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CiriHealth : MonoBehaviour
 {
     public CiriInfo info;
     private CiriAnimation anim;
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<CiriAnimation>();
         info.currentHealth = info.maxHealth;
         Debug.Log("Player Health " + info.currentHealth);
-    }
 
+
+    }
 
     public void TakeDamage(int damage)
     {
@@ -42,5 +45,10 @@ public class CiriHealth : MonoBehaviour
         {
             info.currentHealth = info.maxHealth;
         }
+    }
+
+    public void HealthBar()
+    {
+        
     }
 }

@@ -6,7 +6,7 @@ public class PopUp_Manager : MonoBehaviour
 {
 
     public GameObject popUp;
-    public static bool lvl1Started = true;
+    public static bool lvlStarted = true;
     public static bool tutorialClosed;
     public GameObject questPopUp;
 
@@ -33,7 +33,7 @@ public class PopUp_Manager : MonoBehaviour
 
     private void PopUp()
     {
-        if (lvl1Started)
+        if (lvlStarted)
         {
             popUp.SetActive(true);
             tutorialClosed = false;

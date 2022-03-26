@@ -11,12 +11,12 @@ public class PinkFire : MonoBehaviour
 {
     
     [SerializeField] private Score sc;
-    [SerializeField] private AudioClip magicFire;
-    [SerializeField] private AudioSource aS;
+    [SerializeField] private AudioSource soundPlayer;
+    
 
     private void Start()
     {
-        aS = GetComponent<AudioSource>();
+       
         sc = GameObject.Find("Score").GetComponent<Score>();
         
     }
@@ -26,9 +26,8 @@ public class PinkFire : MonoBehaviour
         
         if (other.name == "Player Cirilla")
         {
-           
+            soundPlayer.Play();
             sc.TrackScore(1);
-            aS.PlayOneShot(magicFire);
             Destroy(gameObject);
         }
     }
