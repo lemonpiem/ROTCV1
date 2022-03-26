@@ -39,8 +39,8 @@ public class Ciri_Attack : MonoBehaviour
         canAttack = false;
         anim.Attack();
         isAttacking = true;
-        AudioSource ac = GetComponent<AudioSource>();
-        ac.PlayOneShot(swordSound);
+        AudioSource aS = GetComponent<AudioSource>();
+        aS.PlayOneShot(swordSound);
         Debug.Log("Attack");
         StartCoroutine(CoolDown());
     }
