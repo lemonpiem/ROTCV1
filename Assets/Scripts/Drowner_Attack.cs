@@ -15,7 +15,7 @@ public class Drowner_Attack : MonoBehaviour
         if (collision.gameObject.name == "Player Cirilla")
             
         {
-            var healthComponent = collision.gameObject.GetComponent<CiriHealth>();
+            CiriHealth healthComponent = collision.gameObject.GetComponent<CiriHealth>();
 
             if (healthComponent != null)
             {
