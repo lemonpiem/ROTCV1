@@ -6,19 +6,16 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
+    public static Score instance;
     [SerializeField] private TextMeshProUGUI textScore1;
     [SerializeField] private int score;
 
-    void Start()
+    void Awake()
     {
-        textScore1 = GameObject.Find("Score1").GetComponent<TextMeshProUGUI>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        instance = this;
         
     }
+
 
     public void TrackScore(int score)
     {
@@ -31,8 +28,7 @@ public class Score : MonoBehaviour
     {
 
         this.score += score;
-        textScore1.text = score.ToString() + " Dragon Flames";
-        Debug.Log(score.ToString() + " Dragon Flames");
+        textScore1.text = this.score.ToString() + " Dragon Flames";
 
     }
 

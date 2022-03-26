@@ -139,7 +139,6 @@ public class Drowner_AI : Enemies
 
         this.enabled = false;
         GetComponent<CapsuleCollider>().enabled = false;
-
         StartCoroutine(DestroyGO());
         
         

@@ -7,6 +7,8 @@ public class PopUp_Manager : MonoBehaviour
 
     public GameObject popUp;
     public static bool lvl1Started = true;
+    public static bool tutorialClosed;
+    public GameObject questPopUp;
 
     // Start is called before the first frame update
     void Start()
@@ -17,15 +19,42 @@ public class PopUp_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PopUp();
+        if (popUp != null)
+        {
+            PopUp();
+   
+        }
+        else
+        {
+            QuestPopUp();
+        }
+
     }
 
-    private  void PopUp()
+    private void PopUp()
     {
         if (lvl1Started)
         {
             popUp.SetActive(true);
+            tutorialClosed = false;
+
         }
+        else
+        {
+            popUp.SetActive(false);
+            tutorialClosed = true;
+            GameObject.Destroy(popUp);
+            
+        }
+    }
+
+    private void QuestPopUp()
+    {
+        if (tutorialClosed == false)
+        {
+            questPopUp.SetActive(true);
+        }
+        
     }
 
 }
