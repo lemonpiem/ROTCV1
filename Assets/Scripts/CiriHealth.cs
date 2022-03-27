@@ -32,6 +32,7 @@ public class CiriHealth : MonoBehaviour
             if (info.currentHealth <= 0)
             {
                 PlayerDeath();
+                FindObjectOfType<GameManager>().GameHasEnded();
             }
         
     }

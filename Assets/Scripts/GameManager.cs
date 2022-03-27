@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [Header("Game Information")]
     [SerializeField] private gameState currentState;
     [Header("Items Recoleted")]
+    bool gameHasEnded;
+    public float restartDelay = 4f;
   
     public static GameManager instance;
-
-    
 
     public enum gameState
     {
@@ -46,6 +45,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Excecute Pause tasks");
                 break;
             case gameState.GameOver:
+                GameHasEnded();
                 Debug.Log("Excecute GameOver tasks");
                 break;
 
@@ -56,6 +56,23 @@ public class GameManager : MonoBehaviour
     public void SetCurrentState(gameState newCurrentState)
     {
         currentState = newCurrentState;
+    }
+
+    public void GameHasEnded()
+    {
+        if (gameHasEnded == false)
+        {
+            gameHasEnded = true;
+            Debug.Log("Game Over");
+
+            Invoke("Restart", restartDelay);
+
+        }
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
