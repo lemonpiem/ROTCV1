@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AddHealth : MonoBehaviour
 {
-    [SerializeField] private AudioSource soundPlayer;
+   
     private int addHealth;
 
     private void Awake()
@@ -17,7 +17,7 @@ public class AddHealth : MonoBehaviour
 
         if (other.name == "Player Cirilla")
         {
-            soundPlayer.Play();
+            FindObjectOfType<AudioManager>().Play("AddHealth");
             other.gameObject.GetComponent<CiriHealth>().HealPlayer(addHealth);
             int currentHealth = other.gameObject.GetComponent<CiriHealth>().info.currentHealth;
             

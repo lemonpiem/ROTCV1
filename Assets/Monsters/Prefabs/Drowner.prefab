@@ -1460,7 +1460,6 @@ GameObject:
   - component: {fileID: 3191977864424268281}
   - component: {fileID: 3191977863565019006}
   - component: {fileID: 3191977863565018995}
-  - component: {fileID: 3191977863565018994}
   - component: {fileID: 3191977863565019005}
   m_Layer: 8
   m_Name: Drowner
@@ -1538,25 +1537,6 @@ CapsuleCollider:
   m_Height: 45.21372
   m_Direction: 1
   m_Center: {x: 1.4636593, y: 21.11793, z: 4.943547}
---- !u!114 &3191977863565018994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3191977864416875131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3e3cb07064a35040813659ec0c4d7ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
-  speed: 0.2
-  rb: {fileID: 0}
-  rayP: {fileID: 3191977863837052373}
-  isMoving: 0
-  volume: {fileID: 0}
-  _vignette: {fileID: 0}
 --- !u!114 &3191977863565019005
 MonoBehaviour:
   m_ObjectHideFlags: 0

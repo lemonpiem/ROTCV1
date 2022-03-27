@@ -107,7 +107,7 @@ public class Drowner_AI : Enemies
         {
 
             anim.DrownerAttack();
-            //ac.PlayOneShot(monsterRoar);
+            FindObjectOfType<AudioManager>().Play("DrownerScream");
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
@@ -136,6 +136,7 @@ public class Drowner_AI : Enemies
     private void Die()
     {
         anim.Death();
+        FindObjectOfType<AudioManager>().Play("DrownerDeath");
 
         dk.IncreaseItems(1);
         this.enabled = false;

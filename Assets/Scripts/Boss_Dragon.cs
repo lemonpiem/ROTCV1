@@ -50,7 +50,7 @@ public class Boss_Dragon : Dragon
         {
 
             anim.FlameAttack();
-            ac.PlayOneShot(dragonRoar);
+            FindObjectOfType<AudioManager>().Play("DragonAttack");
 
             Rigidbody rb =Instantiate(projectile, fireLaucher.position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 5f, ForceMode.Impulse);
@@ -71,7 +71,7 @@ public class Boss_Dragon : Dragon
     {
         data.currentHealth -= damage;
 
-        if (data.currentHealth <= 0)
+        if (data.currentHealth == 0)
         {
 
             Die();
@@ -81,8 +81,8 @@ public class Boss_Dragon : Dragon
     private void Die()
     {
        anim.DragonDeath();
+       FindObjectOfType<AudioManager>().Play("DragonDeath");
 
-        
         this.enabled = false;
         GetComponent<BoxCollider>().enabled = false;
 
@@ -100,8 +100,5 @@ public class Boss_Dragon : Dragon
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
 
-    private void DragonFireFlames()
-    {
-
-    }
+    
 }
