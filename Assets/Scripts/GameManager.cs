@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [Header("Items Recoleted")]
     bool gameHasEnded;
     public float restartDelay = 4f;
+    public float lastLevelDelay = 10f;
     
 
     bool lvl1complete;
@@ -125,7 +126,7 @@ public class GameManager : MonoBehaviour
     public void Lvl3Complete()
     {
         Debug.Log("Congratulations!");
-        Invoke("LoadCredits", restartDelay);
+        Invoke("LoadCredits", lastLevelDelay);
     }
 
     public void LoadCredits()
