@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
         LVL1,
         LVL2,
         LVL3,
+        Credits,
         GameOver,
 
     }
@@ -58,6 +59,9 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Excecute LVL1 tasks");
                 break;
             case gameState.LVL3:
+                Debug.Log("Excecute LVL1 tasks");
+                break;
+            case gameState.Credits:
                 Debug.Log("Excecute LVL1 tasks");
                 break;
             case gameState.GameOver:
@@ -118,7 +122,18 @@ public class GameManager : MonoBehaviour
         SetCurrentState(gameState.LVL3);
     }
 
-    
+    public void Lvl3Complete()
+    {
+        Debug.Log("Congratulations!");
+        Invoke("LoadCredits", restartDelay);
+    }
+
+    public void LoadCredits()
+    {
+        SceneManager.LoadSceneAsync(5);
+        SetCurrentState(gameState.Credits);
+    }
+
 
 }
 

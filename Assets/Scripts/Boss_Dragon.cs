@@ -82,8 +82,11 @@ public class Boss_Dragon : Dragon
     {
        anim.DragonDeath();
 
+        
         this.enabled = false;
         GetComponent<BoxCollider>().enabled = false;
+
+        FindObjectOfType<GameManager>().Lvl3Complete();
     }
 
 
