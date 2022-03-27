@@ -19,7 +19,7 @@ public class AddHealth : MonoBehaviour
             other.gameObject.GetComponent<CiriHealth>().HealPlayer(addHealth);
             int currentHealth = other.gameObject.GetComponent<CiriHealth>().info.currentHealth;
 
-            Debug.Log("Heal " + addHealth + " CurrentHealth " + (currentHealth += addHealth));
+            Debug.Log("Heal " + addHealth + " CurrentHealth " + (currentHealth));
             Destroy(gameObject);
         }
     }

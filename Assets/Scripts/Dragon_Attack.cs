@@ -8,20 +8,21 @@ public class Dragon_Attack : MonoBehaviour
     public DragonInfo dragonInfo;
     public CiriInfo playerInfo;
 
-    // Start is called before the first frame update
-    void OnCollisionEnter(Collision collision)
+  
+
+    private void OnTriggerEnter(Collider other)
     {
 
-        if (collision.gameObject.name == "Player Cirilla")
-            
+        if (other.name == "Player Cirilla")
         {
-            CiriHealth healthComponent = collision.gameObject.GetComponent<CiriHealth>();
+
+            CiriHealth healthComponent = other.gameObject.GetComponent<CiriHealth>();
 
             if (healthComponent != null)
             {
                 healthComponent.TakeDamage(dragonInfo.attackDamage);
                 Debug.Log("Player Health " + (playerInfo.currentHealth -= dragonInfo.attackDamage));
-
+                Destroy(gameObject);
             }
         }
     }

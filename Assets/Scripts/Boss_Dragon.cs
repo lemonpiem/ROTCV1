@@ -17,7 +17,8 @@ public class Boss_Dragon : Dragon
     [SerializeField] private bool playerInSightRange, playerInAttackRange;
 
     [SerializeField] private DragonAnimation anim;
-
+    [SerializeField] private  GameObject projectile;
+    [SerializeField] private Transform fireLaucher;
     [SerializeField] private AudioClip dragonRoar;
     public AudioSource ac;
 
@@ -50,7 +51,10 @@ public class Boss_Dragon : Dragon
 
             anim.FlameAttack();
             ac.PlayOneShot(dragonRoar);
-            //Fuego?
+
+            Rigidbody rb =Instantiate(projectile, fireLaucher.position, Quaternion.identity).GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * 5f, ForceMode.Impulse);
+            rb.AddForce(transform.up * 2f, ForceMode.Impulse);
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
@@ -79,7 +83,7 @@ public class Boss_Dragon : Dragon
        anim.DragonDeath();
 
         this.enabled = false;
-        GetComponent<SphereCollider>().enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
     }
 
 
@@ -93,5 +97,8 @@ public class Boss_Dragon : Dragon
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
 
+    private void DragonFireFlames()
+    {
 
+    }
 }

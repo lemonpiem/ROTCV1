@@ -12,21 +12,28 @@ public class CiriHealth : MonoBehaviour
     void Start()
     {
         anim = GetComponent<CiriAnimation>();
+
+
+        anim = GetComponent<CiriAnimation>();
         info.currentHealth = info.maxHealth;
         Debug.Log("Player Health " + info.currentHealth);
+
+
 
 
     }
 
     public void TakeDamage(int damage)
     {
-        info.currentHealth -= damage;
-        Debug.Log("Player Health " + (info.currentHealth -= damage));
+        
+            info.currentHealth -= damage;
+            Debug.Log("Player Health " + (info.currentHealth -= damage));
 
-        if (info.currentHealth <= 0)
-        {
-            PlayerDeath();
-        }
+            if (info.currentHealth <= 0)
+            {
+                PlayerDeath();
+            }
+        
     }
 
 
