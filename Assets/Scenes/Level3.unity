@@ -761,6 +761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   restartDelay: 4
+  lastLevelDelay: 10
 --- !u!4 &309666606
 Transform:
   m_ObjectHideFlags: 0
