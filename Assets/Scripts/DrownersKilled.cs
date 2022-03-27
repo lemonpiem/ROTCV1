@@ -28,5 +28,10 @@ public class DrownersKilled : MonoBehaviour
         this.kills += kills;
         textScore1.text = this.kills.ToString();
 
+        if (this.kills == 4)
+        {
+            FindObjectOfType<GameManager>().Lvl2Complete();
+        }
+
     }
 }

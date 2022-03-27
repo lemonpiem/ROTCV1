@@ -30,6 +30,10 @@ public class Score : MonoBehaviour
         this.score += score;
         textScore1.text = this.score.ToString() + " Dragon Flames";
 
+        if(this.score == 6)
+        {
+            FindObjectOfType<GameManager>().Lvl1Complete();
+        }
     }
 
     

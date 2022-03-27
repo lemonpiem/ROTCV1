@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     [Header("Items Recoleted")]
     bool gameHasEnded;
     public float restartDelay = 4f;
+    
+
+    bool lvl1complete;
   
     public static GameManager instance;
 
@@ -18,7 +21,11 @@ public class GameManager : MonoBehaviour
         MainMenu,
         Play,
         Pause,
+        LVL1,
+        LVL2,
+        LVL3,
         GameOver,
+
     }
 
     void Awake()
@@ -44,6 +51,15 @@ public class GameManager : MonoBehaviour
             case gameState.Pause:
                 Debug.Log("Excecute Pause tasks");
                 break;
+            case gameState.LVL1:
+                Debug.Log("Excecute LVL1 tasks");
+                break;
+            case gameState.LVL2:
+                Debug.Log("Excecute LVL1 tasks");
+                break;
+            case gameState.LVL3:
+                Debug.Log("Excecute LVL1 tasks");
+                break;
             case gameState.GameOver:
                 GameHasEnded();
                 Debug.Log("Excecute GameOver tasks");
@@ -60,6 +76,9 @@ public class GameManager : MonoBehaviour
 
     public void GameHasEnded()
     {
+
+        SetCurrentState(gameState.GameOver);
+
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
@@ -74,6 +93,32 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void Lvl1Complete()
+    {
+        Debug.Log("Loading Level 2");
+        Invoke("LoadLevel2", restartDelay);
+    }
+
+    public void LoadLevel2()
+    {
+        SceneManager.LoadSceneAsync(3);
+        SetCurrentState(gameState.LVL2);
+    }
+
+    public void Lvl2Complete()
+    {
+        Debug.Log("Loading Level 3");
+        Invoke("LoadLevel3", restartDelay);
+    }
+
+    public void LoadLevel3()
+    {
+        SceneManager.LoadSceneAsync(4);
+        SetCurrentState(gameState.LVL3);
+    }
+
+    
 
 }
 
