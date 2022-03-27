@@ -9,7 +9,7 @@ public class AddHealth : MonoBehaviour
 
     private void Awake()
     {
-        addHealth = 50;
+        addHealth = 20;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -19,7 +19,7 @@ public class AddHealth : MonoBehaviour
             other.gameObject.GetComponent<CiriHealth>().HealPlayer(addHealth);
             int currentHealth = other.gameObject.GetComponent<CiriHealth>().info.currentHealth;
 
-            Debug.Log("Heal " + addHealth + " CurrentHealth " + (currentHealth));
+            
             Destroy(gameObject);
         }
     }

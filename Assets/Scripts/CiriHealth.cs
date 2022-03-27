@@ -46,7 +46,7 @@ public class CiriHealth : MonoBehaviour
     public void HealPlayer(int amount)
     {
         info.currentHealth += amount;
-        Debug.Log("Player Health " + (info.currentHealth += amount));
+        Debug.Log("Player Health " + info.currentHealth);   
 
         if (info.currentHealth > info.maxHealth)
         {
@@ -54,8 +54,4 @@ public class CiriHealth : MonoBehaviour
         }
     }
 
-    public void HealthBar()
-    {
-        
-    }
 }
