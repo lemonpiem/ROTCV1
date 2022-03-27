@@ -11,7 +11,7 @@ public class PinkFire : MonoBehaviour
 {
     
     [SerializeField] private Score sc;
-    [SerializeField] private AudioSource soundPlayer;
+   
     
 
     private void Start()
@@ -23,10 +23,10 @@ public class PinkFire : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+
         if (other.name == "Player Cirilla")
         {
-            soundPlayer.Play();
+            FindObjectOfType<AudioManager>().Play("Recolect Fire");
             sc.TrackScore(1);
             Destroy(gameObject);
         }

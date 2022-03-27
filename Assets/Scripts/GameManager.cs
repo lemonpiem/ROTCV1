@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Excecute Pause tasks");
                 break;
             case gameState.LVL1:
+                FindObjectOfType<AudioManager>().Play("Level1_MainTheme");
                 Debug.Log("Excecute LVL1 tasks");
                 break;
             case gameState.LVL2:
