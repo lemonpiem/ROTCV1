@@ -5,7 +5,7 @@ using UnityEngine;
 public class AddHealth : MonoBehaviour
 {
    
-    private int addHealth;
+    private float addHealth;
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class AddHealth : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("AddHealth");
             other.gameObject.GetComponent<CiriHealth>().HealPlayer(addHealth);
-            int currentHealth = other.gameObject.GetComponent<CiriHealth>().info.currentHealth;
+            float currentHealth = other.gameObject.GetComponent<CiriHealth>().info.currentHealth;
             
 
             Destroy(gameObject);

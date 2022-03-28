@@ -107,6 +107,7 @@ public class Drowner_AI : Enemies
         {
 
             anim.DrownerAttack();
+
             FindObjectOfType<AudioManager>().Play("DrownerScream");
 
             alreadyAttacked = true;

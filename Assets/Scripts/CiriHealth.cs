@@ -7,15 +7,19 @@ public class CiriHealth : MonoBehaviour
 {
     public CiriInfo info;
     private CiriAnimation anim;
+    public Image healthbar;
+    public float vida;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<CiriAnimation>();
 
+        vida = info.currentHealth;
 
         anim = GetComponent<CiriAnimation>();
         info.currentHealth = info.maxHealth;
+        HealthBarFill();
         Debug.Log("Player Health " + info.currentHealth);
 
 
@@ -27,6 +31,7 @@ public class CiriHealth : MonoBehaviour
     {
         
             info.currentHealth -= damage;
+            HealthBarFill();
             Debug.Log("Player Health " + (info.currentHealth -= damage));
 
             if (info.currentHealth <= 0)
@@ -44,9 +49,10 @@ public class CiriHealth : MonoBehaviour
 
     }
 
-    public void HealPlayer(int amount)
+    public void HealPlayer(float amount)
     {
         info.currentHealth += amount;
+        HealthBarFill();
         Debug.Log("Player Health " + info.currentHealth);   
 
         if (info.currentHealth > info.maxHealth)
@@ -54,5 +60,13 @@ public class CiriHealth : MonoBehaviour
             info.currentHealth = info.maxHealth;
         }
     }
+
+    public void HealthBarFill()
+    {
+        float hbFillAmount = info.currentHealth / info.maxHealth;
+        Debug.Log(hbFillAmount);
+        healthbar.fillAmount = hbFillAmount;
+    }
+
 
 }
