@@ -21,7 +21,7 @@ public class Camara : MonoBehaviour
     private Vector3 _smoothVelocity = Vector3.zero;
 
     [SerializeField]
-    private float _smoothTime = 0.2f;
+    private float _smoothTime = 0.000001f;
 
     [SerializeField]
     private Vector2 _rotationXMinMax = new Vector2(-40, 40);
@@ -37,7 +37,7 @@ public class Camara : MonoBehaviour
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity;
+        float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity * -1;
 
         _rotationY += mouseX;
         _rotationX += mouseY;
