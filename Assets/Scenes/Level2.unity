@@ -1222,7 +1222,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575509368}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &575509370
 Camera:
   m_ObjectHideFlags: 0
@@ -4207,10 +4207,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba990ae2f2e14a6439ce75c02158dedc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mouseSensitivity: 1
+  _mouseSensitivity: 0.9
   _target: {fileID: 1592576302}
   _distanceFromTarget: 3
-  _smoothTime: 0.2
+  _smoothTime: 0
   _rotationXMinMax: {x: -40, y: 40}
 --- !u!1001 &1513795175
 PrefabInstance:
@@ -5331,6 +5331,10 @@ PrefabInstance:
       propertyPath: groundCheck
       value: 
       objectReference: {fileID: 1049505652}
+    - target: {fileID: 2124007519, guid: ad73f7765749e2a4fa438d46090213e5, type: 3}
+      propertyPath: rotationSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2124007526, guid: ad73f7765749e2a4fa438d46090213e5, type: 3}
       propertyPath: healthbar
       value: 

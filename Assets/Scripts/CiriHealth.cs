@@ -8,14 +8,14 @@ public class CiriHealth : MonoBehaviour
     public CiriInfo info;
     private CiriAnimation anim;
     public Image healthbar;
-    public float vida;
+    
     
 
     // Start is called before the first frame update
     void Start()
     {
 
-        vida = info.currentHealth;
+        
 
         anim = GetComponent<CiriAnimation>();
         info.currentHealth = info.maxHealth;

@@ -1168,6 +1168,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1500822408}
     - target: {fileID: 2124007519, guid: ad73f7765749e2a4fa438d46090213e5, type: 3}
+      propertyPath: rotationSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2124007519, guid: ad73f7765749e2a4fa438d46090213e5, type: 3}
       propertyPath: floorMask.m_Bits
       value: 64
       objectReference: {fileID: 0}
@@ -1639,10 +1643,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba990ae2f2e14a6439ce75c02158dedc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mouseSensitivity: 0.5
+  _mouseSensitivity: 0.9
   _target: {fileID: 1949260372}
   _distanceFromTarget: 3
-  _smoothTime: 0.2
+  _smoothTime: 0
   _rotationXMinMax: {x: -40, y: 40}
 --- !u!1 &1002362084 stripped
 GameObject:
