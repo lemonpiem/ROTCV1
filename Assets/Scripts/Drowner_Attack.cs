@@ -20,7 +20,7 @@ public class Drowner_Attack : MonoBehaviour
             if (healthComponent != null)
             {
                 healthComponent.TakeDamage(drownerInfo.attackDamage);
-                Debug.Log("Player Health " + (playerInfo.currentHealth -= drownerInfo.attackDamage));
+                //Debug.Log("Player Health " + (playerInfo.currentHealth -= drownerInfo.attackDamage));
 
             }
         }

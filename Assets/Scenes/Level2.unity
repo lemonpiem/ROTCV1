@@ -5332,6 +5332,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1049505652}
     - target: {fileID: 2124007519, guid: ad73f7765749e2a4fa438d46090213e5, type: 3}
+      propertyPath: _followCamera
+      value: 
+      objectReference: {fileID: 1466561914}
+    - target: {fileID: 2124007519, guid: ad73f7765749e2a4fa438d46090213e5, type: 3}
       propertyPath: rotationSpeed
       value: 4
       objectReference: {fileID: 0}

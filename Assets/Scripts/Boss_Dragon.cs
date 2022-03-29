@@ -71,7 +71,7 @@ public class Boss_Dragon : Dragon
     {
         data.currentHealth -= damage;
 
-        if (data.currentHealth == 0)
+        if (data.currentHealth <= 0)
         {
 
             Die();

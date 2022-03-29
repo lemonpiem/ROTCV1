@@ -23,6 +23,7 @@ public class CollitionDetection : MonoBehaviour
             
            other.GetComponent<Animator>().SetBool("RecivingDamage", true);
            other.GetComponent<Drowner_AI>().TakeDamage(datos.damage);
+            Debug.Log("Drowner Health " + currentHealth);
           
                 if (other.GetComponent<Drowner_AI>().info.currentHealth == 0)
                 {

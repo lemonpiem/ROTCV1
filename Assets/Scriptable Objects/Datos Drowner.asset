@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a226d0bdbed1daf488367c18a0b61ba1, type: 3}
   m_Name: Datos Drowner
   m_EditorClassIdentifier: 
-  maxHealth: 40
-  currentHealth: -10
+  maxHealth: 30
+  currentHealth: 30
   attackDamage: 5
