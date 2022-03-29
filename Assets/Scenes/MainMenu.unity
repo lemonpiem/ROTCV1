@@ -2547,6 +2547,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 985eade58f53bd14289ef7040c65219c, type: 2}
+    - target: {fileID: 5267688490207730705, guid: aecd8059bd2be4e40be7600b52a188a0, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5267688490207730705, guid: aecd8059bd2be4e40be7600b52a188a0, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1760911218546876655, guid: aecd8059bd2be4e40be7600b52a188a0, type: 3}
     - {fileID: 1760911218546876650, guid: aecd8059bd2be4e40be7600b52a188a0, type: 3}
