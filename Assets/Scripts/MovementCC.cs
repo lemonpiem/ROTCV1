@@ -22,12 +22,12 @@ public class MovementCC : MonoBehaviour
 
     [SerializeField] private CiriAnimation anim;
 
-    [SerializeField] private CinemachineVirtualCamera _followCamera;
+    [SerializeField] private CinemachineFreeLook _followCamera;
     
 
     void Start()
     {
-        _followCamera = GameObject.Find("Movement").GetComponent<CinemachineVirtualCamera>();
+        _followCamera = GameObject.Find("CM FreeLook1").GetComponent<CinemachineFreeLook>();
         cc = GetComponent<CharacterController>();
         anim = GetComponent<CiriAnimation>();
         anim.Idle();
