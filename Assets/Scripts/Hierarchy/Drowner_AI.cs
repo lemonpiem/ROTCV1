@@ -39,7 +39,7 @@ public class Drowner_AI : Enemies
     void Awake()
     {
         player = GameObject.Find("Player Cirilla").transform;
-        dk = GameObject.Find("----DrownersKilled----").GetComponent<DrownersKilled>();
+        dk = GameObject.Find("DrownersKilled").GetComponent<DrownersKilled>();
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<MonsterAnimation>();
         ac = GetComponent<AudioSource>();

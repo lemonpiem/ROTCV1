@@ -1061,7 +1061,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bf12105d4eeb94d95d9a5f9febe5ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterClass: []
 --- !u!4 &330909602
 Transform:
   m_ObjectHideFlags: 0
@@ -1693,7 +1692,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b8234fd739bd94db62271c6e1b7b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireClasses: []
 --- !u!4 &442342399
 Transform:
   m_ObjectHideFlags: 0
@@ -4309,7 +4307,7 @@ GameObject:
   - component: {fileID: 924213207}
   - component: {fileID: 924213208}
   m_Layer: 0
-  m_Name: SoundManager
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6773,7 +6771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1498503892}
   m_Layer: 0
-  m_Name: ----Enviroment----
+  m_Name: Enviroment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
