@@ -25,7 +25,7 @@ public class CiriHealth : MonoBehaviour
 
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         
             info.currentHealth -= damage;
@@ -60,7 +60,7 @@ public class CiriHealth : MonoBehaviour
 
     public void HealthBarFill()
     {
-        float hbFillAmount = info.currentHealth / info.maxHealth;
+        var hbFillAmount = info.currentHealth / info.maxHealth;
         
         healthbar.fillAmount = hbFillAmount;
     }

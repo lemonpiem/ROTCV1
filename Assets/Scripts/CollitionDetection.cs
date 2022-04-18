@@ -6,7 +6,7 @@ public class CollitionDetection : MonoBehaviour
 {
     public Ciri_Attack ca;
     public CiriInfo datos;
-    public int currentHealth;
+    public float currentHealth;
 
     private void Start()
     {
@@ -25,7 +25,7 @@ public class CollitionDetection : MonoBehaviour
            other.GetComponent<Drowner_AI>().TakeDamage(datos.damage);
            
           
-                if (other.GetComponent<Drowner_AI>().info.currentHealth == 0)
+                if (other.GetComponent<Drowner_AI>().info.currentHealth == 0f)
                 {
                     
                     GetComponent<Animator>().SetBool("IsDead", true);

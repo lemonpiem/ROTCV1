@@ -6,9 +6,9 @@ public class Dragon : Enemies
 {
 
     [SerializeField] public DragonInfo data;
-    [SerializeField] public int damage;
-    [SerializeField] public int maxHealth;
-    [SerializeField] public int currentHealth;
+    [SerializeField] public float damage;
+    [SerializeField] public float maxHealth;
+    [SerializeField] public float currentHealth;
 
     new
 
@@ -16,7 +16,7 @@ public class Dragon : Enemies
         void Start()
     {
         
-         maxHealth = data.maxHealth;
+        maxHealth = data.maxHealth;
         damage = data.attackDamage;
         currentHealth = data.currentHealth;
 

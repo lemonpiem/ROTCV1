@@ -11,5 +11,5 @@ public class CiriInfo : ScriptableObject
     public Material material;
     public float maxHealth;
     public float currentHealth;
-    public int damage; 
+    public float damage; 
 }

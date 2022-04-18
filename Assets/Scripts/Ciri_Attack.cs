@@ -23,7 +23,7 @@ public class Ciri_Attack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.F)) 
         {
             if (canAttack)
             {

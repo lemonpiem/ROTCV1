@@ -65,11 +65,14 @@ public class Boss_Dragon : Dragon
     private void ResetAttack()
     {
         alreadyAttacked = false;
+        anim.StopAttack();
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         data.currentHealth -= damage;
+        anim.GetHit();
+        
 
         if (data.currentHealth <= 0)
         {

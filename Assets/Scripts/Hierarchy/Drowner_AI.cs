@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 
 public class Drowner_AI : Enemies
@@ -32,7 +33,9 @@ public class Drowner_AI : Enemies
 
     [SerializeField] private DrownersKilled dk;
     public AudioClip monsterRoar;
-    public AudioSource ac;
+
+
+    //public Image healthbar;
 
 
 
@@ -42,7 +45,7 @@ public class Drowner_AI : Enemies
         dk = GameObject.Find("DrownersKilled").GetComponent<DrownersKilled>();
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<MonsterAnimation>();
-        ac = GetComponent<AudioSource>();
+      
 
         info.currentHealth = info.maxHealth;
 
@@ -123,9 +126,10 @@ public class Drowner_AI : Enemies
         alreadyAttacked = false;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         info.currentHealth -= damage;
+        //HealthBarFill();
 
         if (info.currentHealth <= 0)
         {
@@ -162,7 +166,15 @@ public class Drowner_AI : Enemies
         Destroy(gameObject);
     }
 
+    //public void HealthBarFill()
+    
+       // float hbFillAmount = info.currentHealth / info.maxHealth;
+
+        //healthbar.fillAmount = hbFillAmount;
     
 }
+
+
+
 
 

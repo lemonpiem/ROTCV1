@@ -5,7 +5,7 @@ using UnityEngine;
 public class AddHealth : MonoBehaviour
 {
    
-    private float addHealth;
+    private int addHealth;
 
     private void Awake()
     {

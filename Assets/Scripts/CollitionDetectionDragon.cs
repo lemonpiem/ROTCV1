@@ -8,7 +8,7 @@ public class CollitionDetectionDragon : MonoBehaviour
         public Ciri_Attack ca;
         public CiriInfo datos;
         public Boss_Dragon dragonStats;
-        public int currentHealth;
+        public float currentHealth;
 
     private void Start()
     {
@@ -22,7 +22,7 @@ public class CollitionDetectionDragon : MonoBehaviour
             if (other.tag == "Enemies" && ca.isAttacking)
 
             {
-                Debug.Log("collider OK");
+                
                 other.GetComponent<DragonAnimation>().GetHit();
                 other.GetComponent<Boss_Dragon>().TakeDamage(datos.damage);
                
@@ -38,5 +38,16 @@ public class CollitionDetectionDragon : MonoBehaviour
 
             }
         }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Enemies" && ca.isAttacking)
+
+        {
+
+            other.GetComponent<DragonAnimation>().StopAttack();
+
+
+        }
     }
+}
 

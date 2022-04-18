@@ -8,7 +8,7 @@ public class DragonInfo : ScriptableObject
     public string dragonType;
     public Material skin;
     
-    public int maxHealth;
-    public int currentHealth;
-    public int attackDamage;
+    public float maxHealth;
+    public float currentHealth;
+    public float attackDamage;
 }

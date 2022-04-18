@@ -27,6 +27,7 @@ public class DragonAnimation : MonoBehaviour
     {
         anim.SetBool("SeesPlayer", true);
         anim.SetBool("PlayerAttacking", false);
+        anim.SetBool("PlayerHit", false);
     }
 
     public void GetHit()
