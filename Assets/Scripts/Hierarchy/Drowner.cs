@@ -63,7 +63,7 @@ public class Drowner : Enemies
     {
         if (collision.gameObject.name == "Player Cirilla")
         {
-            Debug.Log("Ciri: Agggh");
+            
             anim.Shout();
             volume.profile.TryGetSettings(out _vignette);
             _vignette.intensity.value = 0.513f;

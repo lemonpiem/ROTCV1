@@ -48,27 +48,27 @@ public class GameManager : MonoBehaviour
             case gameState.MainMenu:
                 break;
             case gameState.Play:
-                Debug.Log("Excecute Play tasks");
+                
                 break;
             case gameState.Pause:
-                Debug.Log("Excecute Pause tasks");
+                
                 break;
             case gameState.LVL1:
                 FindObjectOfType<AudioManager>().Play("Level1_MainTheme");
-                Debug.Log("Excecute LVL1 tasks");
+                
                 break;
             case gameState.LVL2:
-                Debug.Log("Excecute LVL1 tasks");
+                
                 break;
             case gameState.LVL3:
-                Debug.Log("Excecute LVL1 tasks");
+                
                 break;
             case gameState.Credits:
-                Debug.Log("Excecute LVL1 tasks");
+                
                 break;
             case gameState.GameOver:
                 GameHasEnded();
-                Debug.Log("Excecute GameOver tasks");
+                
                 break;
 
         }
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
-            Debug.Log("Game Over");
+            
 
             Invoke("Restart", restartDelay);
 
@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
 
     public void Lvl1Complete()
     {
-        Debug.Log("Loading Level 2");
+        
         Invoke("LoadLevel2", restartDelay);
     }
 
@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
 
     public void Lvl2Complete()
     {
-        Debug.Log("Loading Level 3");
+       
         Invoke("LoadLevel3", restartDelay);
     }
 
@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
 
     public void Lvl3Complete()
     {
-        Debug.Log("Congratulations!");
+        
         Invoke("LoadCredits", lastLevelDelay);
     }
 

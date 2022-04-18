@@ -23,8 +23,7 @@ public class SettingsMenu : MonoBehaviour
     public void BackMenu()
     {
         SceneManager.LoadSceneAsync(0);
-        Debug.Log("Publisher: OnClick ");
-        Debug.Log("Subscriber: BackMenu ");
+       
 
     }
 

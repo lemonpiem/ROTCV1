@@ -21,7 +21,6 @@ public class Dragon_Attack : MonoBehaviour
             if (healthComponent != null)
             {
                 healthComponent.TakeDamage(dragonInfo.attackDamage);
-                Debug.Log("Player Health " + (playerInfo.currentHealth -= dragonInfo.attackDamage));
                 Destroy(gameObject);
             }
         }

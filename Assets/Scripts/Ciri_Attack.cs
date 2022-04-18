@@ -41,7 +41,6 @@ public class Ciri_Attack : MonoBehaviour
         isAttacking = true;
         AudioSource aS = GetComponent<AudioSource>();
         aS.PlayOneShot(swordSound);
-        Debug.Log("Attack");
         StartCoroutine(CoolDown());
     }
 

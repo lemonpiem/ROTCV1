@@ -29,23 +29,20 @@ public class MainMenu : MonoBehaviour
     {
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        Debug.Log("Publisher: OnClick ");
-        Debug.Log("Subscriber: Play Game ");
+        
         
     }
 
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Publisher: OnClick ");
-        Debug.Log("Subscriber: Quit Game ");
+        
     }
 
     public void Settings()
     {
         SceneManager.LoadSceneAsync(2);
-        Debug.Log("Publisher: OnClick ");
-        Debug.Log("Subscriber: Settings ");
+        
 
     }
 

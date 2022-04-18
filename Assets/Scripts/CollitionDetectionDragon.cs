@@ -25,7 +25,7 @@ public class CollitionDetectionDragon : MonoBehaviour
                 Debug.Log("collider OK");
                 other.GetComponent<DragonAnimation>().GetHit();
                 other.GetComponent<Boss_Dragon>().TakeDamage(datos.damage);
-                Debug.Log("Dragon Life" + dragonStats.data.currentHealth);
+               
 
             if (other.GetComponent<Boss_Dragon>().data.currentHealth == 0)
                 
