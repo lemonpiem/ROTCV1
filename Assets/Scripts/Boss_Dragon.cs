@@ -51,8 +51,8 @@ public class Boss_Dragon : Dragon
         {
 
             anim.FlameAttack();
-            
-            audioManager.Play("DragonAttack");
+
+            FindObjectOfType<AudioManager>().Play("DragonAttack");
 
             Rigidbody rb =Instantiate(projectile, fireLaucher.position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 5f, ForceMode.Impulse);
@@ -87,7 +87,8 @@ public class Boss_Dragon : Dragon
     {
        anim.DragonDeath();
        
-       audioManager.Play("DragonDeath");
+       
+        FindObjectOfType<AudioManager>().Play("DragonDeath");
 
         this.enabled = false;
         GetComponent<BoxCollider>().enabled = false;

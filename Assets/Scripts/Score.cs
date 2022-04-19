@@ -28,7 +28,7 @@ public class Score : MonoBehaviour
     {
 
         this.score += score;
-        textScore1.text = this.score.ToString() + " Dragon Flames";
+        textScore1.text = this.score.ToString() + "/6 Flames";
 
         if(this.score == 6)
         {
