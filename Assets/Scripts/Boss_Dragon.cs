@@ -21,6 +21,7 @@ public class Boss_Dragon : Dragon
     [SerializeField] private Transform fireLaucher;
     [SerializeField] private AudioClip dragonRoar;
     public AudioSource ac;
+    public AudioManager audioManager;
 
     private void Awake()
     {
@@ -30,7 +31,7 @@ public class Boss_Dragon : Dragon
         ac = GetComponent<AudioSource>();
     }
     
-    new void Update()
+    new void FixedUpdate()
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
@@ -50,7 +51,8 @@ public class Boss_Dragon : Dragon
         {
 
             anim.FlameAttack();
-            FindObjectOfType<AudioManager>().Play("DragonAttack");
+            
+            audioManager.Play("DragonAttack");
 
             Rigidbody rb =Instantiate(projectile, fireLaucher.position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 5f, ForceMode.Impulse);
@@ -84,7 +86,8 @@ public class Boss_Dragon : Dragon
     private void Die()
     {
        anim.DragonDeath();
-       FindObjectOfType<AudioManager>().Play("DragonDeath");
+       
+       audioManager.Play("DragonDeath");
 
         this.enabled = false;
         GetComponent<BoxCollider>().enabled = false;

@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button newGame;
     [SerializeField] private Button quitGame;
     [SerializeField] private Button settingsGame;
+    [SerializeField] private Button credits;
 
 
     private void Start()
@@ -20,7 +21,7 @@ public class MainMenu : MonoBehaviour
         newGame.onClick.AddListener(PlayGame);
         quitGame.onClick.AddListener(QuitGame);
         settingsGame.onClick.AddListener(Settings);
-
+        credits.onClick.AddListener(Credits);
 
     }
 
@@ -46,6 +47,13 @@ public class MainMenu : MonoBehaviour
 
     }
 
-   
+    public void Credits()
+    {
+        SceneManager.LoadSceneAsync(5);
+
+
+    }
+
+
 }
 

@@ -33,9 +33,12 @@ public class Drowner_AI : Enemies
 
     [SerializeField] private DrownersKilled dk;
     public AudioClip monsterRoar;
+    public AudioSource ac;
+
+    public AudioManager audioManager;
 
 
-    //public Image healthbar;
+
 
 
 
@@ -53,7 +56,7 @@ public class Drowner_AI : Enemies
     }
 
 
-    new void Update()
+    new void FixedUpdate()
     {
 
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
@@ -115,7 +118,8 @@ public class Drowner_AI : Enemies
             
 
             anim.DrownerAttack();
-            FindObjectOfType<AudioManager>().Play("DrownerScream");
+            
+            audioManager.Play("DrownerScream");
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
@@ -135,7 +139,7 @@ public class Drowner_AI : Enemies
     public void TakeDamage(float damage)
     {
         info.currentHealth -= damage;
-        //HealthBarFill();
+        
 
         if (info.currentHealth <= 0)
         {
@@ -147,7 +151,8 @@ public class Drowner_AI : Enemies
     private void Die()
     {
         anim.Death();
-        FindObjectOfType<AudioManager>().Play("DrownerDeath");
+        
+        audioManager.Play("DrownerDeath");
 
         dk.IncreaseItems(1);
         this.enabled = false;
@@ -172,12 +177,7 @@ public class Drowner_AI : Enemies
         Destroy(gameObject);
     }
 
-    //public void HealthBarFill()
-    
-       // float hbFillAmount = info.currentHealth / info.maxHealth;
-
-        //healthbar.fillAmount = hbFillAmount;
-    
+   
 }
 
 
