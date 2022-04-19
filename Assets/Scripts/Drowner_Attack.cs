@@ -10,19 +10,18 @@ public class Drowner_Attack : MonoBehaviour
 
     
 
-    void OnCollisionStay(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
 
-        if (collision.gameObject.name == "Player Cirilla")
+        if (other.gameObject.name == "Player Cirilla")
             
         {
-            Debug.Log("funciona");
-            CiriHealth healthComponent = collision.gameObject.GetComponent<CiriHealth>();
+            
+            CiriHealth healthComponent = other.gameObject.GetComponent<CiriHealth>();
 
             if (healthComponent != null)
             {
                 healthComponent.TakeDamage(drownerInfo.attackDamage);
-                
 
             }
         }

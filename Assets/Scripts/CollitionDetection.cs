@@ -37,4 +37,18 @@ public class CollitionDetection : MonoBehaviour
 
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Enemies" && ca.isAttacking)
+        {
+
+            other.GetComponent<Animator>().SetBool("RecivingDamage", false);
+            other.GetComponent<Animator>().SetBool("Fighting", false);
+
+
+
+
+        }
+    }
 }

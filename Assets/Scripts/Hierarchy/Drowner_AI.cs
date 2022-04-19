@@ -96,6 +96,7 @@ public class Drowner_AI : Enemies
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+        
         anim.Run();
     }
 
@@ -104,13 +105,16 @@ public class Drowner_AI : Enemies
 
         agent.SetDestination(transform.position);
 
-        transform.LookAt(player);
+        transform.LookAt(player); 
+        
+        
 
         if (!alreadyAttacked)
         {
+           
+            
 
             anim.DrownerAttack();
-
             FindObjectOfType<AudioManager>().Play("DrownerScream");
 
             alreadyAttacked = true;
@@ -124,6 +128,8 @@ public class Drowner_AI : Enemies
     private void ResetAttack()
     {
         alreadyAttacked = false;
+        anim.StopDrownerAttack();
+        
     }
 
     public void TakeDamage(float damage)
