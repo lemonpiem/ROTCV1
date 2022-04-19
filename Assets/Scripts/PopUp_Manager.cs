@@ -34,9 +34,9 @@ public class PopUp_Manager : MonoBehaviour
     private void PopUp()
     {
         if (lvlStarted)
-        {
+        {       
             popUp.SetActive(true);
-            tutorialClosed = false;
+            tutorialClosed = false;         
 
         }
         else

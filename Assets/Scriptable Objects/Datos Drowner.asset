@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Datos Drowner
   m_EditorClassIdentifier: 
   maxHealth: 70
-  currentHealth: -50
+  currentHealth: 40
   attackDamage: 10

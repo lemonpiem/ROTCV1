@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CiriHealth : MonoBehaviour
 {
     public CiriInfo info;
     private CiriAnimation anim;
     public Image healthbar;
-    
-   
+    public TextMeshProUGUI healthText;
+
+
     void Start()
     {
 
@@ -17,6 +19,7 @@ public class CiriHealth : MonoBehaviour
 
         anim = GetComponent<CiriAnimation>();
         info.currentHealth = info.maxHealth;
+        healthText.text = "Health" + info.currentHealth + "/" + info.maxHealth;
         HealthBarFill();
        
 
@@ -29,6 +32,7 @@ public class CiriHealth : MonoBehaviour
     {
         
             info.currentHealth -= damage;
+            healthText.text = "Health" + info.currentHealth + "/" + info.maxHealth;
             HealthBarFill();
 
             if (info.currentHealth <= 0)
@@ -49,6 +53,7 @@ public class CiriHealth : MonoBehaviour
     public void HealPlayer(float amount)
     {
         info.currentHealth += amount;
+        healthText.text = "Health" + info.currentHealth + "/" + info.maxHealth;
         HealthBarFill();
          
 
